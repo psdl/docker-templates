@@ -34,7 +34,7 @@ Note: It is possible to use traefik with ACME (Lets Encrypt). This will require 
       <CPUset/>
       <DateInstalled>1543869167</DateInstalled>
       <DonateText/>
-	  <DonateLink/>
+      <DonateLink/>
   <Description>Traefik is modern reverse-proxy. You must have a traefik.toml config located in your appdata/traefik directory. Example template with very little modification needed is available here https://raw.githubusercontent.com/pseidl/portainer-templates/master/traefik.toml&#xD;
 &#xD;
 Note on SSL - easiest method is to use a free account at digitalocean. &#xD;

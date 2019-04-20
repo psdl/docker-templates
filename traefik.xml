@@ -6,7 +6,7 @@
   <Network>bridge</Network>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
-<Support>https://github.com/benderstwin/docker-templates/issues</Support>
+<Support>https://github.com/psdl/docker-templates/issues</Support>
   <Project/>
   <Overview>Traefik is a modern reverse-proxy.  You must have a traefik.toml config located in your appdata/traefik directory.  Example template with very little modification needed is available here https://raw.githubusercontent.com/benderstwin/Portainer-Templates/master/traefik.toml&#xD;
 &#xD;
@@ -47,8 +47,8 @@ traefik.frontend.headers.STSPreload=true #optional&#xD;
 traefik.frontend.headers.frameDeny=true #optional</Overview>
   <Category>Network:Web Network:Proxy</Category>
   <WebUI>http://127.0.0.1:8080</WebUI>
-  <TemplateURL>https://raw.githubusercontent.com/benderstwin/docker-templates/master/Bender-traefik.xml</TemplateURL>
-  <Icon>https://raw.githubusercontent.com/benderstwin/docker-templates/master/images/traefik.png</Icon>
+  <TemplateURL>https://raw.githubusercontent.com/psdl/docker-templates/master/traefik.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/psdl/docker-templates/master/images/traefik.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
@@ -95,6 +95,11 @@ traefik.frontend.headers.frameDeny=true #optional</Description>
   <Networking>
     <Mode>bridge</Mode>
     <Publish>
+      <Port>
+        <HostPort>80</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
       <Port>
         <HostPort>443</HostPort>
         <ContainerPort>443</ContainerPort>
@@ -204,10 +209,11 @@ traefik.frontend.headers.frameDeny=true #optional</Description>
   </Labels>
   <Config Name="Enable Traefik" Target="traefik.enable" Default="true" Mode="" Description="set to false to NOT proxy this application" Type="Label" Display="always" Required="false" Mask="false">true</Config>
   <Config Name="Backend container name" Target="traefik.backend" Default="traefik" Mode="" Description="Name of the container to route traffic to" Type="Label" Display="always" Required="true" Mask="false">traefik</Config>
-  <Config Name="Traefik frontend host" Target="traefik.frontend.rule" Default="Host:traefik.domain.fun" Mode="" Description="Only use one fromtend rule.  This one is for using subdomains instead of subfolders.  &#13;&#10;&#13;&#10;YOU MUST REMOVE THIS RULE TO USE SUB FOLDERS." Type="Label" Display="always" Required="false" Mask="false">Host:traefikhome.domain.com</Config>
-  <Config Name="Domain Name (TLD)" Target="traefik.frontend.headers.SSLHost" Default="domain.fun" Mode="" Description="Change to your TLD" Type="Label" Display="always" Required="true" Mask="false">domain.com</Config>
+  <Config Name="Traefik frontend host" Target="traefik.frontend.rule" Default="Host:traefik.domain.com" Mode="" Description="Only use one fromtend rule.  This one is for using subdomains instead of subfolders.  &#13;&#10;&#13;&#10;YOU MUST REMOVE THIS RULE TO USE SUB FOLDERS." Type="Label" Display="always" Required="false" Mask="false">Host:traefikhome.domain.com</Config>
+  <Config Name="Domain Name (TLD)" Target="traefik.frontend.headers.SSLHost" Default="domain.com" Mode="" Description="Change to your TLD" Type="Label" Display="always" Required="true" Mask="false">domain.com</Config>
   <Config Name="Config" Target="/etc/traefik" Default="/mnt/user/appdata/traefik" Mode="rw" Description="path to config directory" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/traefik</Config>
   <Config Name="/shared" Target="/shared" Default="/mnt/user/appdata/traefik/shared" Mode="rw" Description="should contain:&#13;&#10;&#13;&#10;SSL CERT as .crt&#13;&#10;SSL KEY as .key&#13;&#10;.htpasswd file if using http basic auth" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/traefik/shared</Config>
+  <Config Name="80:80" Target="80" Default="80" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="false" Mask="false">80</Config>
   <Config Name="443:443" Target="443" Default="443" Mode="tcp" Description="Container Port: 443" Type="Port" Display="always" Required="false" Mask="false">443</Config>
   <Config Name="8080:8080" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always" Required="false" Mask="false">8080</Config>
   <Config Name="http auth file" Target="traefik.frontend.auth.basic.usersFile" Default="/shared/.htpasswd" Mode="" Description="Container Label: traefik.frontend.auth.basic.usersFile" Type="Label" Display="always" Required="false" Mask="false">/shared/.htpasswd</Config>

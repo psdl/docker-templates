@@ -1,13 +1,14 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>traefik</Name>
-  <Overview>Traefik is a modern HTTP reverse proxy and load balancer that makes deploying microservices easy.</Overview>
   <Repository>traefik:latest</Repository>
   <Registry>library/traefik - Docker Hub</Registry>
   <Network>bridge</Network>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
-  <Environment/>
+  <Support/>
+  <Project/>
+  <Overview>Traefik is a modern HTTP reverse proxy and load balancer that makes deploying microservices easy.</Overview>
   <Category>Network:Web Network:Proxy</Category>
   <WebUI>http://127.0.0.1:8080/</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/psdl/docker-templates/master/traefik.xml</TemplateURL>

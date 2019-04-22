@@ -33,7 +33,7 @@
     Please create your traefik.toml with your settings !
   </Description>
   <Networking>
-    <Mode>bridge</Mode>
+    <Mode>proxy</Mode>
     <Publish>
       <Port>
         <HostPort>80</HostPort>

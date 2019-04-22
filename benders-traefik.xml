@@ -202,7 +202,7 @@ traefik.frontend.headers.frameDeny=true #optional</Description>
       <Mode/>
     </Label>
   </Labels>
-  <Config Name="Enable Traefik" Target="traefik.enable" Default="true" Mode="" Description="set to false to NOT proxy this application" Type="Label" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="Enable Traefik" Target="traefik.enable" Default="true" Mode="" Description="set to false to NOT proxy this application" Type="Label" Display="always" Required="false" Mask="false">false</Config>
   <Config Name="Backend container name" Target="traefik.backend" Default="traefik" Mode="" Description="Name of the container to route traffic to" Type="Label" Display="always" Required="true" Mask="false">traefik</Config>
   <Config Name="Traefik frontend host" Target="traefik.frontend.rule" Default="Host:traefik.domain.fun" Mode="" Description="Only use one fromtend rule.  This one is for using subdomains instead of subfolders.  &#13;&#10;&#13;&#10;YOU MUST REMOVE THIS RULE TO USE SUB FOLDERS." Type="Label" Display="always" Required="false" Mask="false">Host:traefikhome.domain.com</Config>
   <Config Name="Domain Name (TLD)" Target="traefik.frontend.headers.SSLHost" Default="domain.fun" Mode="" Description="Change to your TLD" Type="Label" Display="always" Required="true" Mask="false">domain.com</Config>

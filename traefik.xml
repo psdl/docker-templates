@@ -41,6 +41,7 @@
       <Mode>ro</Mode>
     </Volume>
   </Data>
+  <Environment/>
   <Labels>
     <Label>
       <Value>true</Value>
@@ -113,22 +114,22 @@
       <Mode/>
     </Label>
   </Labels>
-  <Config Name="HTTP port" Target="80" Default="80" Mode="tcp" Description="http port to expose" Type="Port" Display="always" Required="true" Mask="false">80</Config>
-  <Config Name="HTTPS port" Target="443" Default="443" Mode="tcp" Description="HTTPS port to expose" Type="Port" Display="always" Required="true" Mask="false">443</Config>
-  <Config Name="WebUI port" Target="8080" Default="8080" Mode="tcp" Description="WebUI port to expose" Type="Port" Display="always" Required="true" Mask="false">8080</Config>
+  <Config Name="HTTP port" Target="80" Default="80" Mode="tcp" Description="http port to expose" Type="Port" Display="always" Required="false" Mask="false">80</Config>
+  <Config Name="HTTPS port" Target="443" Default="443" Mode="tcp" Description="HTTPS port to expose" Type="Port" Display="always" Required="false" Mask="false">443</Config>
+  <Config Name="WebUI port" Target="8080" Default="8080" Mode="tcp" Description="WebUI port to expose" Type="Port" Display="always" Required="false" Mask="false">8080</Config>
   <Config Name="Config directory" Target="/etc/traefik" Default="/mnt/user/appdata/traefik" Mode="rw" Description="Path to traefik.toml" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/traefik</Config>
-  <Config Name="docker socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="Docker server endpoint. Can be a tcp or a unix socket endpoint." Type="Path" Display="always" Required="true" Mask="false">/var/run/docker.sock</Config>
-  <Config Name="traefik.enable" Target="traefik.enable" Default="false" Mode="" Description="set to false to NOT proxy this application" Type="Label" Display="always" Required="true" Mask="false">true</Config>
+  <Config Name="docker socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="Docker server endpoint. Can be a tcp or a unix socket endpoint." Type="Path" Display="advanced" Required="true" Mask="false">/var/run/docker.sock</Config>
+  <Config Name="traefik.enable" Target="traefik.enable" Default="false" Mode="" Description="set to false to NOT proxy this application" Type="Label" Display="always" Required="false" Mask="false">true</Config>
   <Config Name="traefik.backend" Target="traefik.backend" Default="traefik" Mode="" Description="Overrides the container name by foo in the generated name of the backend." Type="Label" Display="always" Required="true" Mask="false">traefik</Config>
-  <Config Name="traefik.frontend.rule" Target="traefik.frontend.rule" Default="traefik.domain.com" Mode="" Description="Overrides the default frontend rule. Default: Host:{containerName}.{domain}" Type="Label" Display="always" Required="false" Mask="false">Host:traefik.domain.com</Config>
+  <Config Name="traefik.frontend.rule" Target="traefik.frontend.rule" Default="Host:traefik.domain.com" Mode="" Description="Overrides the default frontend rule. Default: Host:{containerName}.{domain}" Type="Label" Display="always" Required="false" Mask="false">Host:traefik.domain.com</Config>
   <Config Name="traefik.port" Target="traefik.port" Default="8080" Mode="" Description="Registers this port. Useful when the container exposes multiples ports." Type="Label" Display="advanced" Required="true" Mask="false">8080</Config>
-  <Config Name="traefik.docker.network" Target="traefik.docker.network" Default="proxy" Mode="" Description="Overrides the default docker network to use for connections to the container." Type="Label" Display="advanced" Required="true" Mask="false">proxy</Config>
+  <Config Name="traefik.docker.network" Target="traefik.docker.network" Default="default" Mode="" Description="Overrides the default docker network to use for connections to the container." Type="Label" Display="advanced" Required="true" Mask="false">proxy</Config>
   <Config Name="traefik.frontend.headers.SSLRedirect" Target="traefik.frontend.headers.SSLRedirect" Default="true" Mode="" Description="Forces the frontend to redirect to SSL if a non-SSL request is sent." Type="Label" Display="advanced" Required="true" Mask="false">true</Config>
   <Config Name="traefik.frontend.headers.STSSeconds" Target="traefik.frontend.headers.STSSeconds" Default="315360000" Mode="" Description="Sets the max-age of the STS header." Type="Label" Display="advanced" Required="true" Mask="false">315360000</Config>
   <Config Name="traefik.frontend.headers.browserXSSFilter" Target="traefik.frontend.headers.browserXSSFilter" Default="true" Mode="" Description="Adds the X-XSS-Protection header with the value 1; mode=block." Type="Label" Display="advanced" Required="true" Mask="false">true</Config>
   <Config Name="traefik.frontend.headers.contentTypeNosniff" Target="traefik.frontend.headers.contentTypeNosniff" Default="true" Mode="" Description="Adds the X-Content-Type-Options header with the value nosniff." Type="Label" Display="advanced" Required="true" Mask="false">true</Config>
   <Config Name="traefik.frontend.headers.forceSTSHeader" Target="traefik.frontend.headers.forceSTSHeader" Default="false" Mode="" Description="Adds the STS header to non-SSL requests." Type="Label" Display="advanced" Required="true" Mask="false">true</Config>
-  <Config Name="traefik.frontend.headers.SSLHost" Target="traefik.frontend.headers.SSLHost" Default="domain.com" Mode="" Description="This setting configures the hostname that redirects will be based on. Default is "", which is the same host as the request." Type="Label" Display="always" Required="true" Mask="false">domain.com</Config>
+  <Config Name="traefik.frontend.headers.SSLHost" Target="traefik.frontend.headers.SSLHost" Default="domain.com" Mode="" Description="This setting configures the hostname that redirects will be based on. Default is "", which is the same host as the request." Type="Label" Display="advanced" Required="true" Mask="false">domain.com</Config>
   <Config Name="traefik.frontend.headers.STSIncludeSubdomains" Target="traefik.frontend.headers.STSIncludeSubdomains" Default="true" Mode="" Description="Adds the IncludeSubdomains section of the STS header." Type="Label" Display="advanced" Required="true" Mask="false">true</Config>
   <Config Name="traefik.frontend.headers.STSPreload" Target="traefik.frontend.headers.STSPreload" Default="true" Mode="" Description="Adds the preload flag to the STS header." Type="Label" Display="advanced" Required="true" Mask="false">true</Config>
   <Config Name="traefik.frontend.headers.frameDeny" Target="traefik.frontend.headers.frameDeny" Default="false" Mode="" Description="Adds the X-Frame-Options header with the value of DENY." Type="Label" Display="advanced" Required="true" Mask="false">true</Config>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Container>
+<Container version="2">
   <Name>traefik</Name>
   <Description>Traefik is a modern HTTP reverse proxy and load balancer that makes deploying microservices easy.</Description>
   <Registry>https://hub.docker.com/_/traefik</Registry>

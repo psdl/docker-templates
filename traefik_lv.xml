@@ -123,14 +123,14 @@
       <Mode/>
     </Label>
   </Labels>
-  <Config Name="HTTP Port" Target="80" Default="80" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="false" Mask="false">80</Config>
-  <Config Name="HTTPS Port" Target="443" Default="443" Mode="tcp" Description="Container Port: 443" Type="Port" Display="always" Required="false" Mask="false">443</Config>
-  <Config Name="WebUI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always" Required="false" Mask="false">8080</Config>
-  <Config Name="Config" Target="/etc/traefik" Default="/mnt/user/appdata/traefik" Mode="rw" Description="path to config directory" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/traefik</Config>
-  <Config Name="Docker socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="Path to docker socket" Type="Path" Display="advanced" Required="true" Mask="false">/var/run/docker.sock</Config>
-  <Config Name="Enable Traefik" Target="traefik.enable" Default="true" Mode="" Description="set to false to NOT proxy this application" Type="Label" Display="always" Required="false" Mask="false">false</Config>
-  <Config Name="Backend container name" Target="traefik.backend" Default="traefik" Mode="" Description="Name of the container to route traffic to" Type="Label" Display="always" Required="true" Mask="false">traefik</Config>
-  <Config Name="Traefik frontend host" Target="traefik.frontend.rule" Default="Host:traefik.domain.com" Mode="" Description="Only use one fromtend rule.  This one is for using subdomains instead of subfolders.  &#13;&#10;&#13;&#10;YOU MUST REMOVE THIS RULE TO USE SUB FOLDERS." Type="Label" Display="always" Required="false" Mask="false">Host:traefik.domain.com</Config>
+  <Config Name="HTTP Port" Target="80" Default="80" Mode="tcp" Description="HTTP port to expose." Type="Port" Display="always" Required="false" Mask="false">80</Config>
+  <Config Name="HTTPS Port" Target="443" Default="443" Mode="tcp" Description="HTTPS port to expose." Type="Port" Display="always" Required="false" Mask="false">443</Config>
+  <Config Name="WebUI Port" Target="8080" Default="8080" Mode="tcp" Description="WebUI port to expose." Type="Port" Display="always" Required="false" Mask="false">8080</Config>
+  <Config Name="Config directory" Target="/etc/traefik" Default="/mnt/user/appdata/traefik" Mode="rw" Description="Path to traefik.toml" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/traefik</Config>
+  <Config Name="Docker socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="Docker server endpoint. Can be a tcp or a unix socket endpoint." Type="Path" Display="advanced" Required="true" Mask="false">/var/run/docker.sock</Config>
+  <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Set to false to NOT proxy this application." Type="Label" Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="traefik.backend" Target="traefik.backend" Default="traefik" Mode="" Description="Overrides the container name by foo in the generated name of the backend." Type="Label" Display="always" Required="true" Mask="false">traefik</Config>
+  <Config Name="traefik.frontend.rule" Target="traefik.frontend.rule" Default="Host:traefik.domain.com" Mode="" Description="Overrides the default frontend rule. Default: Host:{containerName}.{domain}" Type="Label" Display="always" Required="false" Mask="false">Host:traefik.domain.com</Config>
   <Config Name="traefik.port" Target="traefik.port" Default="8080" Mode="" Description="What port does your traefik container listen on?" Type="Label" Display="advanced" Required="true" Mask="false">8080</Config>
   <Config Name="Docker Network" Target="traefik.docker.network" Default="bridge" Mode="" Description="connect to default bridge network.  " Type="Label" Display="advanced" Required="true" Mask="false">bridge</Config>
   <Config Name="traefik.frontend.headers.SSLRedirect" Target="traefik.frontend.headers.SSLRedirect" Default="true" Mode="" Description="traefik.frontend.headers.SSLRedirect" Type="Label" Display="advanced" Required="true" Mask="false">true</Config>

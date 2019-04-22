@@ -8,7 +8,14 @@
   <Privileged>false</Privileged>
   <Support>https://github.com/psdl/docker-templates/issues</Support>
   <Project/>
-  <Overview>Traefik is a modern HTTP reverse proxy and load balancer that makes deploying microservices easy.</Overview>
+  <Overview>
+    Traefik is a modern HTTP reverse proxy and load balancer that makes deploying microservices easy.[br]
+    [br]
+    > cd /mnt/user/appdata/traefik[br]
+    > touch acme.json[br]
+    > chmod 0600 acme.json[br][br]
+    Please create your traefik.toml with your settings !
+  </Overview>
   <Category>Network:Web Network:Proxy</Category>
   <WebUI>http://127.0.0.1:8080</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/psdl/docker-templates/master/traefik.xml</TemplateURL>

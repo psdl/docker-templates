@@ -1,10 +1,12 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>traefik</Name>
+  <Overview>Traefik is a modern HTTP reverse proxy and load balancer that makes deploying microservices easy.</Overview>
   <Description>Traefik is a modern HTTP reverse proxy and load balancer that makes deploying microservices easy.</Description>
+	<Repository>traefik:latest</Repository>
   <Registry>https://hub.docker.com/_/traefik</Registry>
-  <Repository>traefik:latest</Repository>
-  <BindTime>true</BindTime>
+  <Network>bridge</Network>
+	<Shell>sh</Shell>
   <Privileged>false</Privileged>
   <Environment/>
   <Networking>
@@ -15,12 +17,12 @@
         <ContainerPort>80</ContainerPort>
         <Protocol>tcp</Protocol>
       </Port>
-	  <Port>
+	    <Port>
         <HostPort>443</HostPort>
         <ContainerPort>443</ContainerPort>
         <Protocol>tcp</Protocol>
       </Port>
-	  <Port>
+	    <Port>
         <HostPort>8080</HostPort>
         <ContainerPort>8080</ContainerPort>
         <Protocol>tcp</Protocol>
@@ -33,7 +35,7 @@
       <ContainerDir>/etc/traefik</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
-	<Volume>
+	  <Volume>
       <HostDir>/var/run/docker.sock</HostDir>
       <ContainerDir>/var/run/docker.sock</ContainerDir>
       <Mode>ro</Mode>
@@ -41,66 +43,66 @@
   </Data>
   <Labels>
     <Label>
-	  <Value>true</Value>
+	    <Value>true</Value>
       <Name>traefik.enable</Name>
       <Mode/>
     </Label>
-	<Label>
-	  <Value>traefik</Value>
+	  <Label>
+	    <Value>traefik</Value>
       <Name>traefik.backend</Name>
       <Mode/>
-	</Label>
-	<Label>
+	  </Label>
+	  <Label>
       <Value>Host:traefik.domain.com</Value>
-	  <Name>traefik.fontend.rule</Name>
+	    <Name>traefik.fontend.rule</Name>
       <Mode/>
     </Label>
-	<Label>
-	  <Value>8080</Value>
+	  <Label>
+	    <Value>8080</Value>
       <Name>traefik.port</Name>
       <Mode/>
     </Label>
-	<Label>
-	  <Value>proxy</Value>
+	  <Label>
+	    <Value>proxy</Value>
       <Name>traefik.docker.network</Name>
       <Mode/>
     </Label>
-	<Label>
-	  <Value>true</Value>
+	  <Label>
+	    <Value>true</Value>
       <Name>traefik.frontend.headers.SSLRedirect</Name>
       <Mode/>
     </Label>
-	<Label>
-	  <Value>315360000</Value>
+	  <Label>
+	    <Value>315360000</Value>
       <Name>traefik.frontend.headers.STSSeconds</Name>
       <Mode/>
     </Label>
-	<Label>
-	  <Value>true</Value>
-	  <Name>traefik.frontend.headers.browserXSSFilter</Name>
+	  <Label>
+	    <Value>true</Value>
+	    <Name>traefik.frontend.headers.browserXSSFilter</Name>
       <Mode/>
     </Label>
     <Label>
-	  <Value>true</Value>
+	    <Value>true</Value>
       <Name>traefik.frontend.headers.contentTypeNosniff</Name>
       <Mode/>
     </Label>
-	<Label>
-	  <Value>true</Value>
+    <Label>
+	    <Value>true</Value>
       <Name>traefik.frontend.headers.forceSTSHeader</Name>
       <Mode/>
     </Label>
     <Label>
-	  <Value>domain.com</Value>
+	    <Value>domain.com</Value>
       <Name>traefik.frontend.headers.SSLHost</Name>
       <Mode/>
     </Label>
-	<Label>
+	  <Label>
       <Value>true</Value>
       <Name>traefik.frontend.headers.STSIncludeSubdomains</Name>
       <Mode/>
     </Label>
-	<Label>
+	  <Label>
       <Value>true</Value>
       <Name>traefik.frontend.headers.STSPreload</Name>
       <Mode/>
@@ -132,6 +134,7 @@
   <Config Name="traefik.frontend.headers.frameDeny" Target="traefik.frontend.headers.frameDeny" Default="false" Mode="" Description="Adds the X-Frame-Options header with the value of DENY." Type="Label" Display="advanced" Required="true" Mask="false">true</Config>
   <Version>05616fd2</Version>
   <WebUI>http://127.0.0.1:8080/</WebUI>
+	<TemplateURL>https://raw.githubusercontent.com/psdl/docker-templates/master/traefik.xml</TemplateURL>
   <Banner>https://raw.githubusercontent.com/psdl/docker-templates/master/images/traefik_banner.png</Banner>
   <Icon>https://raw.githubusercontent.com/psdl/docker-templates/master/images/traefik.png</Icon>
   <ExtraParams/>

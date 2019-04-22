@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0"?>
 <Container version="2">
   <Name>traefik</Name>
   <Description>Traefik is a modern HTTP reverse proxy and load balancer that makes deploying microservices easy.</Description>

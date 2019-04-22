@@ -63,18 +63,13 @@
       <Mode/>
     </Label>
     <Label>
-      <Value>Host:traefikhome.domain.com</Value>
+      <Value>Host:traefik.domain.com</Value>
       <Name>traefik.frontend.rule</Name>
       <Mode/>
     </Label>
     <Label>
-      <Value>domain.com</Value>
-      <Name>traefik.frontend.headers.SSLHost</Name>
-      <Mode/>
-    </Label>
-    <Label>
-      <Value>/shared/.htpasswd</Value>
-      <Name>traefik.frontend.auth.basic.usersFile</Name>
+      <Value>8080</Value>
+      <Name>traefik.port</Name>
       <Mode/>
     </Label>
     <Label>
@@ -108,6 +103,11 @@
       <Mode/>
     </Label>
     <Label>
+      <Value>domain.com</Value>
+      <Name>traefik.frontend.headers.SSLHost</Name>
+      <Mode/>
+    </Label>
+    <Label>
       <Value>true</Value>
       <Name>traefik.frontend.headers.STSIncludeSubdomains</Name>
       <Mode/>
@@ -122,30 +122,24 @@
       <Name>traefik.frontend.headers.frameDeny</Name>
       <Mode/>
     </Label>
-    <Label>
-      <Value>8080</Value>
-      <Name>traefik.port</Name>
-      <Mode/>
-    </Label>
   </Labels>
-  <Config Name="Enable Traefik" Target="traefik.enable" Default="true" Mode="" Description="set to false to NOT proxy this application" Type="Label" Display="always" Required="false" Mask="false">false</Config>
-  <Config Name="Backend container name" Target="traefik.backend" Default="traefik" Mode="" Description="Name of the container to route traffic to" Type="Label" Display="always" Required="true" Mask="false">traefik</Config>
-  <Config Name="Traefik frontend host" Target="traefik.frontend.rule" Default="Host:traefik.domain.fun" Mode="" Description="Only use one fromtend rule.  This one is for using subdomains instead of subfolders.  &#13;&#10;&#13;&#10;YOU MUST REMOVE THIS RULE TO USE SUB FOLDERS." Type="Label" Display="always" Required="false" Mask="false">Host:traefikhome.domain.com</Config>
-  <Config Name="Domain Name (TLD)" Target="traefik.frontend.headers.SSLHost" Default="domain.fun" Mode="" Description="Change to your TLD" Type="Label" Display="always" Required="true" Mask="false">domain.com</Config>
-  <Config Name="Config" Target="/etc/traefik" Default="/mnt/user/appdata/traefik" Mode="rw" Description="path to config directory" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/traefik</Config>
   <Config Name="HTTP Port" Target="80" Default="80" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="false" Mask="false">80</Config>
   <Config Name="HTTPS Port" Target="443" Default="443" Mode="tcp" Description="Container Port: 443" Type="Port" Display="always" Required="false" Mask="false">443</Config>
   <Config Name="WebUI Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always" Required="false" Mask="false">8080</Config>
-  <Config Name="http auth file" Target="traefik.frontend.auth.basic.usersFile" Default="/shared/.htpasswd" Mode="" Description="Container Label: traefik.frontend.auth.basic.usersFile" Type="Label" Display="always" Required="false" Mask="false">/shared/.htpasswd</Config>
+  <Config Name="Config" Target="/etc/traefik" Default="/mnt/user/appdata/traefik" Mode="rw" Description="path to config directory" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/traefik</Config>
+  <Config Name="Docker socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="Path to docker socket" Type="Path" Display="advanced" Required="true" Mask="false">/var/run/docker.sock</Config>
+  <Config Name="Enable Traefik" Target="traefik.enable" Default="true" Mode="" Description="set to false to NOT proxy this application" Type="Label" Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="Backend container name" Target="traefik.backend" Default="traefik" Mode="" Description="Name of the container to route traffic to" Type="Label" Display="always" Required="true" Mask="false">traefik</Config>
+  <Config Name="Traefik frontend host" Target="traefik.frontend.rule" Default="Host:traefik.domain.com" Mode="" Description="Only use one fromtend rule.  This one is for using subdomains instead of subfolders.  &#13;&#10;&#13;&#10;YOU MUST REMOVE THIS RULE TO USE SUB FOLDERS." Type="Label" Display="always" Required="false" Mask="false">Host:traefik.domain.com</Config>
+  <Config Name="traefik.port" Target="traefik.port" Default="8080" Mode="" Description="What port does your traefik container listen on?" Type="Label" Display="advanced" Required="true" Mask="false">8080</Config>
   <Config Name="Docker Network" Target="traefik.docker.network" Default="bridge" Mode="" Description="connect to default bridge network.  " Type="Label" Display="advanced" Required="true" Mask="false">bridge</Config>
   <Config Name="traefik.frontend.headers.SSLRedirect" Target="traefik.frontend.headers.SSLRedirect" Default="true" Mode="" Description="traefik.frontend.headers.SSLRedirect" Type="Label" Display="advanced" Required="true" Mask="false">true</Config>
   <Config Name="traefik.frontend.headers.STSSeconds" Target="traefik.frontend.headers.STSSeconds" Default="315360000" Mode="" Description="traefik.frontend.headers.STSSeconds" Type="Label" Display="advanced" Required="true" Mask="false">315360000</Config>
   <Config Name="traefik.frontend.headers.browserXSSFilter" Target="traefik.frontend.headers.browserXSSFilter" Default="true" Mode="" Description="traefik.frontend.headers.browserXSSFilter" Type="Label" Display="advanced" Required="true" Mask="false">true</Config>
   <Config Name="traefik.frontend.headers.contentTypeNosniff" Target="traefik.frontend.headers.contentTypeNosniff" Default="true" Mode="" Description="traefik.frontend.headers.contentTypeNosniff" Type="Label" Display="advanced" Required="true" Mask="false">true</Config>
   <Config Name="traefik.frontend.headers.forceSTSHeader" Target="traefik.frontend.headers.forceSTSHeader" Default="true" Mode="" Description="traefik.frontend.headers.forceSTSHeader" Type="Label" Display="advanced" Required="true" Mask="false">true</Config>
+  <Config Name="Domain Name (TLD)" Target="traefik.frontend.headers.SSLHost" Default="domain.fun" Mode="" Description="Change to your TLD" Type="Label" Display="always" Required="true" Mask="false">domain.com</Config>
+  <Config Name="traefik.frontend.headers.STSIncludeSubdomains" Target="traefik.frontend.headers.STSIncludeSubdomains" Default="true" Mode="" Description="traefik.frontend.headers.STSIncludeSubdomains" Type="Label" Display="advanced" Required="true" Mask="false">true</Config>
   <Config Name="traefik.frontend.headers.STSPreload" Target="traefik.frontend.headers.STSPreload" Default="true" Mode="" Description="traefik.frontend.headers.STSPreload" Type="Label" Display="advanced" Required="true" Mask="false">true</Config>
   <Config Name="traefik.frontend.headers.frameDeny" Target="traefik.frontend.headers.frameDeny" Default="true" Mode="" Description="traefik.frontend.headers.frameDeny" Type="Label" Display="advanced" Required="true" Mask="false">true</Config>
-  <Config Name="traefik.frontend.headers.STSIncludeSubdomains" Target="traefik.frontend.headers.STSIncludeSubdomains" Default="true" Mode="" Description="traefik.frontend.headers.STSIncludeSubdomains" Type="Label" Display="advanced" Required="true" Mask="false">true</Config>
-  <Config Name="Docker socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="Path to docker socket" Type="Path" Display="advanced" Required="true" Mask="false">/var/run/docker.sock</Config>
-  <Config Name="traefik.port" Target="traefik.port" Default="8080" Mode="" Description="What port does your traefik container listen on?" Type="Label" Display="advanced" Required="true" Mask="false">8080</Config>
 </Container>

@@ -17,7 +17,14 @@
   <PostArgs/>
   <CPUset/>
   <DateInstalled>1543869167</DateInstalled>
-  <Description>Traefik is a modern HTTP reverse proxy and load balancer that makes deploying microservices easy.</Description>
+  <Description>
+    Traefik is a modern HTTP reverse proxy and load balancer that makes deploying microservices easy.[br]
+    [br]
+    > cd /mnt/user/appdata/traefik[br]
+    > touch acme.json[br]
+    > chmod 0600 acme.json[br][br]
+    Please create your traefik.toml with your settings !
+  </Description>
   <Networking>
     <Mode>bridge</Mode>
     <Publish>

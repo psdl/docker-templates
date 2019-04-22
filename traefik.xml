@@ -2,13 +2,21 @@
 <Container version="2">
   <Name>traefik</Name>
   <Overview>Traefik is a modern HTTP reverse proxy and load balancer that makes deploying microservices easy.</Overview>
-  <Description>Traefik is a modern HTTP reverse proxy and load balancer that makes deploying microservices easy.</Description>
   <Repository>traefik:latest</Repository>
   <Registry>https://hub.docker.com/_/traefik</Registry>
   <Network>bridge</Network>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
   <Environment/>
+  <Category>Network:Web Network:Proxy</Category>
+  <WebUI>http://127.0.0.1:8080/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/psdl/docker-templates/master/traefik.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/psdl/docker-templates/master/images/traefik.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1543869167</DateInstalled>
+  <Description>Traefik is a modern HTTP reverse proxy and load balancer that makes deploying microservices easy.</Description>
   <Networking>
     <Mode>bridge</Mode>
     <Publish>
@@ -133,10 +141,4 @@
   <Config Name="traefik.frontend.headers.STSIncludeSubdomains" Target="traefik.frontend.headers.STSIncludeSubdomains" Default="true" Mode="" Description="Adds the IncludeSubdomains section of the STS header." Type="Label" Display="advanced" Required="true" Mask="false">true</Config>
   <Config Name="traefik.frontend.headers.STSPreload" Target="traefik.frontend.headers.STSPreload" Default="true" Mode="" Description="Adds the preload flag to the STS header." Type="Label" Display="advanced" Required="true" Mask="false">true</Config>
   <Config Name="traefik.frontend.headers.frameDeny" Target="traefik.frontend.headers.frameDeny" Default="false" Mode="" Description="Adds the X-Frame-Options header with the value of DENY." Type="Label" Display="advanced" Required="true" Mask="false">true</Config>
-  <Version>05616fd2</Version>
-  <WebUI>http://127.0.0.1:8080/</WebUI>
-  <TemplateURL>https://raw.githubusercontent.com/psdl/docker-templates/master/traefik.xml</TemplateURL>
-  <Banner>https://raw.githubusercontent.com/psdl/docker-templates/master/images/traefik_banner.png</Banner>
-  <Icon>https://raw.githubusercontent.com/psdl/docker-templates/master/images/traefik.png</Icon>
-  <ExtraParams/>
 </Container>

@@ -64,7 +64,7 @@
     </Label>
     <Label>
       <Value>Host:traefik.domain.com</Value>
-      <Name>traefik.fontend.rule</Name>
+      <Name>traefik.frontend.rule</Name>
       <Mode/>
     </Label>
     <Label>

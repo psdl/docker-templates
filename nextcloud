@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+  <Name>nextcloud</Name>
+  <Repository>nextcloud:latest</Repository>
+  <Registry>https://hub.docker.com/_/nextcloud</Registry>
+  <Network>bridge</Network>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/psdl/docker-templates/issues</Support>
+  <Project/>
+  <Overview>
+    Nextcloud[br][br]
+    A safe home for all your data. Access & share your files, calendars, contacts, mail & more from any device, on your terms.[br]
+  </Overview>
+  <Category>Cloud: Productivity: Tools: MediaServer:Other Network:Web</Category>
+  <WebUI>http://127.0.0.1:8443</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/psdl/docker-templates/master/nextcloud.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/psdl/docker-templates/master/images/nextcloud.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1543869167</DateInstalled>
+  <Description>
+    Nextcloud[br][br]
+    A safe home for all your data. Access & share your files, calendars, contacts, mail & more from any device, on your terms.[br]
+  </Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>443</HostPort>
+        <ContainerPort>443</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/nextcloud/config</HostDir>
+      <ContainerDir>/var/www/html/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/nextcloud/data</HostDir>
+      <ContainerDir>/var/www/html/data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>1000</Value>
+      <Name>PUID</Name>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>PGID</Name>
+    </Variable>
+  </Environment>
+  <Labels>
+    <Label>
+      <Value>true</Value>
+      <Name>traefik.enable</Name>
+      <Mode/>
+    </Label>
+    <Label>
+      <Value>nextcloud</Value>
+      <Name>traefik.backend</Name>
+      <Mode/>
+    </Label>
+    <Label>
+      <Value>Host:domain.com</Value>
+      <Name>traefik.frontend.rule</Name>
+      <Mode/>
+    </Label>
+    <Label>
+      <Value>443</Value>
+      <Name>traefik.port</Name>
+      <Mode/>
+    </Label>
+    <Label>
+      <Value>https</Value>
+      <Name>traefik.protocol</Name>
+    </Label>
+    <Label>
+      <Value>bridge</Value>
+      <Name>traefik.docker.network</Name>
+      <Mode/>
+    </Label>
+      <Label>
+      <Value>true</Value>
+      <Name>traefik.frontend.headers.SSLRedirect</Name>
+      <Mode/>
+    </Label>
+    <Label>
+      <Value>315360000</Value>
+      <Name>traefik.frontend.headers.STSSeconds</Name>
+      <Mode/>
+    </Label>
+    <Label>
+      <Value>true</Value>
+      <Name>traefik.frontend.headers.browserXSSFilter</Name>
+      <Mode/>
+    </Label>
+    <Label>
+      <Value>true</Value>
+      <Name>traefik.frontend.headers.contentTypeNosniff</Name>
+      <Mode/>
+    </Label>
+    <Label>
+      <Value>true</Value>
+      <Name>traefik.frontend.headers.forceSTSHeader</Name>
+      <Mode/>
+    </Label>
+    <Label>
+      <Value>domain.com</Value>
+      <Name>traefik.frontend.headers.SSLHost</Name>
+      <Mode/>
+    </Label>
+    <Label>
+      <Value>true</Value>
+      <Name>traefik.frontend.headers.STSIncludeSubdomains</Name>
+      <Mode/>
+    </Label>
+    <Label>
+      <Value>true</Value>
+      <Name>traefik.frontend.headers.STSPreload</Name>
+      <Mode/>
+    </Label>
+    <Label>
+      <Value>true</Value>
+      <Name>traefik.frontend.headers.frameDeny</Name>
+      <Mode/>
+    </Label>
+  </Labels>
+  <Config Name="HTTPS Port" Target="443" Default="443" Mode="tcp" Description="HTTPS port to expose." Type="Port" Display="always" Required="false" Mask="false">443</Config>
+  <Config Name="config directory" Target="/var/www/html/config" Default="/mnt/user/appdata/nextcloud/config" Mode="rw" Description="Path to Nextcloud config directory" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/nextcloud/config</Config>
+  <Config Name="data directory" Target="/var/www/html/data" Default="/mnt/user/appdata/nextcloud/data" Mode="rw" Description="Path to Nextcloud data directory" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/nextcloud/data</Config>  
+  <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Set to false to NOT proxy this application." Type="Label" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="traefik.backend" Target="traefik.backend" Default="nextcloud" Mode="" Description="Overrides the container name by foo in the generated name of the backend." Type="Label" Display="always" Required="true" Mask="false">nextcloud</Config>
+  <Config Name="traefik.frontend.rule" Target="traefik.frontend.rule" Default="Host:domain.com" Mode="" Description="Overrides the default frontend rule. Default: Host:{containerName}.{domain}" Type="Label" Display="always" Required="false" Mask="false">Host:domain.com</Config>
+  <Config Name="traefik.port" Target="traefik.port" Default="443" Mode="" Description="Registers this port. Useful when the container exposes multiples ports." Type="Label" Display="advanced" Required="true" Mask="false">443</Config>
+  <Config Name="traefik.docker.network" Target="traefik.docker.network" Default="default" Mode="" Description="Overrides the default docker network to use for connections to the container." Type="Label" Display="advanced" Required="true" Mask="false">default</Config>
+  <Config Name="traefik.frontend.headers.SSLRedirect" Target="traefik.frontend.headers.SSLRedirect" Default="true" Mode="" Description="Forces the frontend to redirect to SSL if a non-SSL request is sent." Type="Label" Display="advanced" Required="true" Mask="false">true</Config>
+  <Config Name="traefik.frontend.headers.STSSeconds" Target="traefik.frontend.headers.STSSeconds" Default="315360000" Mode="" Description="Sets the max-age of the STS header." Type="Label" Display="advanced" Required="true" Mask="false">315360000</Config>
+  <Config Name="traefik.frontend.headers.browserXSSFilter" Target="traefik.frontend.headers.browserXSSFilter" Default="true" Mode="" Description="Adds the X-XSS-Protection header with the value 1; mode=block." Type="Label" Display="advanced" Required="true" Mask="false">true</Config>
+  <Config Name="traefik.frontend.headers.contentTypeNosniff" Target="traefik.frontend.headers.contentTypeNosniff" Default="true" Mode="" Description="Adds the X-Content-Type-Options header with the value nosniff." Type="Label" Display="advanced" Required="true" Mask="false">true</Config>
+  <Config Name="traefik.frontend.headers.forceSTSHeader" Target="traefik.frontend.headers.forceSTSHeader" Default="true" Mode="" Description="Adds the STS header to non-SSL requests." Type="Label" Display="advanced" Required="true" Mask="false">true</Config>
+  <Config Name="traefik.frontend.headers.SSLHost" Target="traefik.frontend.headers.SSLHost" Default="domain.com" Mode="" Description="This setting configures the hostname that redirects will be based on. Default is NOTHING, which is the same host as the request." Type="Label" Display="always" Required="true" Mask="false">domain.com</Config>
+  <Config Name="traefik.frontend.headers.STSIncludeSubdomains" Target="traefik.frontend.headers.STSIncludeSubdomains" Default="true" Mode="" Description="Adds the IncludeSubdomains section of the STS header." Type="Label" Display="advanced" Required="true" Mask="false">true</Config>
+  <Config Name="traefik.frontend.headers.STSPreload" Target="traefik.frontend.headers.STSPreload" Default="true" Mode="" Description="Adds the preload flag to the STS header." Type="Label" Display="advanced" Required="true" Mask="false">true</Config>
+  <Config Name="traefik.frontend.headers.frameDeny" Target="traefik.frontend.headers.frameDeny" Default="true" Mode="" Description="Adds the X-Frame-Options header with the value of DENY." Type="Label" Display="advanced" Required="true" Mask="false">true</Config>
+</Container>

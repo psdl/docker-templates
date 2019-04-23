@@ -19,7 +19,7 @@ An Enhanced drop in replacement for Mysql[br]
   <Environment>
     <Variable>
       <Name>PUID</Name>
-      <Value>99</Value>
+      <Value>1000</Value>
     </Variable>
     <Variable>
       <Name>PGID</Name>

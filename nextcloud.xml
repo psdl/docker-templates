@@ -55,7 +55,7 @@
       <Name>traefik.port</Name>
     </Variable>
     <Variable>
-      <Value>https</Value>
+      <Value>http</Value>
       <Name>traefik.protocol</Name>
     </Variable>
     <Variable>

@@ -19,7 +19,6 @@
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <BindTime>true</BindTime>
   <Date>2019-04-24</Date>
   <Description>
   MariaDB
@@ -51,11 +50,11 @@
   <Networking>
     <Mode>bridge</Mode>
     <Publish>
-      <Port>
-        <HostPort>3306</HostPort>
-        <ContainerPort>3306</ContainerPort>
-        <Protocol>tcp</Protocol>
-      </Port>
+    <Port>
+      <HostPort>3306</HostPort>
+      <ContainerPort>3306</ContainerPort>
+      <Protocol>tcp</Protocol>
+    </Port>
     </Publish>
   </Networking>
   <Data>

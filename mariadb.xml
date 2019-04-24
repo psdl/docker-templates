@@ -72,9 +72,9 @@
       <Mode/>
     </Label>
   </Labels>
-  <Config Name="MYSQL_ROOT_PASSWORD" Target="MYSQL_ROOT_PASSWORD" Default="" Mode="" Description="This variable is mandatory and specifies the password that will be set for the MariaDB root superuser account." Type="Variable" Display="always" Required="true" Mask="false"></Config>
-  <Config Name="MYSQL_DATABASE" Target="MYSQL_DATABASE" Default="" Mode="" Description="This variable is optional and allows you to specify the name of a database to be created on image startup." Type="Variable" Display="always" Required="false" Mask="false"></Config>
-  <Config Name="MYSQL_USER" Target="MYSQL_USER" Default="" Mode="" Description="These variables are optional, used in conjunction to create a new user and to set that user's password. This user will be granted superuser permissions (see above) for the database specified by the MYSQL_DATABASE variable. Both variables are required for a user to be created." Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="MYSQL_ROOT_PASSWORD" Target="MYSQL_ROOT_PASSWORD" Default="" Mode="" Description="This variable is mandatory and specifies the password that will be set for the MariaDB root superuser account." Type="Label" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="MYSQL_DATABASE" Target="MYSQL_DATABASE" Default="" Mode="" Description="This variable is optional and allows you to specify the name of a database to be created on image startup." Type="Label" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="MYSQL_USER" Target="MYSQL_USER" Default="" Mode="" Description="These variables are optional, used in conjunction to create a new user and to set that user's password. This user will be granted superuser permissions (see above) for the database specified by the MYSQL_DATABASE variable. Both variables are required for a user to be created." Type="Label" Display="always" Required="false" Mask="false"></Config>
   <Config Name="MYSQL_PASSWORD" Target="MYSQL_PASSWORD" Default="" Mode="" Description="Set the Password for the MYSQL_USER" Type="Label" Display="always" Required="false" Mask="false"></Confi>
   <Config Name="traefik.enable" Target="traefik.enable" Default="false" Mode="" Description="Set to true to proxy this application." Type="Label" Display="always" Required="false" Mask="false">false</Config>
  </Container>

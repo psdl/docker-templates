@@ -9,9 +9,8 @@
   <Support>https://github.com/psdl/docker-templates/issues</Support>
   <Project/>
   <Overview>
-Nextcloud
-    
-A safe home for all your data. Access and share your files, calendars, contacts, mail and more from any device, on your terms.
+  Nextcloud[br][br]
+  A safe home for all your data. Access and share your files, calendars, contacts, mail and more from any device, on your terms.
   </Overview>
   <Category>Cloud: Productivity: Tools: MediaServer:Other Network:Web</Category>
   <WebUI>http://[IP]:[PORT]/</WebUI>
@@ -22,9 +21,8 @@ A safe home for all your data. Access and share your files, calendars, contacts,
   <CPUset/>
   <Date>2019-04-24</Date>
   <Description>
-Nextcloud
-    
-A safe home for all your data. Access and share your files, calendars, contacts, mail and more from any device, on your terms.
+  Nextcloud[br][br]
+  A safe home for all your data. Access and share your files, calendars, contacts, mail and more from any device, on your terms.
   </Description>
   <Data>
     <Volume>
@@ -38,7 +36,68 @@ A safe home for all your data. Access and share your files, calendars, contacts,
       <Mode>rw</Mode>
     </Volume>
   </Data>
-  <Environment/>
+  <Environment>
+    <Variable>
+      <Value>true</Value>
+      <Name>traefik.enable</Name>
+    </Variable>
+    <Variable>
+      <Value>nextcloud</Value>
+      <Name>traefik.backend</Name>
+    </Variable>
+    <Variable>
+      <Value>Host:domain.com</Value>
+      <Name>traefik.frontend.rule</Name>
+    </Variable>
+    <Variable>
+      <Value>443</Value>
+      <Name>traefik.port</Name>
+    </Variable>
+    <Variable>
+      <Value>https</Value>
+      <Name>traefik.protocol</Name>
+    </Variable>
+    <Variable>
+      <Value>bridge</Value>
+      <Name>traefik.docker.network</Name>
+    </Variable>
+      <Label>
+      <Value>true</Value>
+      <Name>traefik.frontend.headers.SSLRedirect</Name>
+    </Variable>
+    <Variable>
+      <Value>315360000</Value>
+      <Name>traefik.frontend.headers.STSSeconds</Name>
+    </Variable>
+    <Variable>
+      <Value>true</Value>
+      <Name>traefik.frontend.headers.browserXSSFilter</Name>
+    </Variable>
+    <Variable>
+      <Value>true</Value>
+      <Name>traefik.frontend.headers.contentTypeNosniff</Name>
+    </Variable>
+    <Variable>
+      <Value>true</Value>
+      <Name>traefik.frontend.headers.forceSTSHeader</Name>
+    </Variable>
+    <Variable>
+      <Value>domain.com</Value>
+      <Name>traefik.frontend.headers.SSLHost</Name>
+    </Variable>
+    <Variable>
+      <Value>true</Value>
+      <Name>traefik.frontend.headers.STSIncludeSubdomains</Name>
+    </Variable>
+    <Variable>
+      <Value>true</Value>
+      <Name>traefik.frontend.headers.STSPreload</Name>
+    </Variable>
+    <Variable>
+      <Value>true</Value>
+      <Name>traefik.frontend.headers.frameDeny</Name>
+    </Variable>
+  </Environment>
   <Networking>
     <Mode>bridge</Mode>
     <Publish>
@@ -54,80 +113,4 @@ A safe home for all your data. Access and share your files, calendars, contacts,
       </Port>
     </Publish>
   </Networking>
-  <Labels>
-    <Label>
-      <Value>true</Value>
-      <Name>traefik.enable</Name>
-      <Mode/>
-    </Label>
-    <Label>
-      <Value>nextcloud</Value>
-      <Name>traefik.backend</Name>
-      <Mode/>
-    </Label>
-    <Label>
-      <Value>Host:domain.com</Value>
-      <Name>traefik.frontend.rule</Name>
-      <Mode/>
-    </Label>
-    <Label>
-      <Value>443</Value>
-      <Name>traefik.port</Name>
-      <Mode/>
-    </Label>
-    <Label>
-      <Value>https</Value>
-      <Name>traefik.protocol</Name>
-    </Label>
-    <Label>
-      <Value>bridge</Value>
-      <Name>traefik.docker.network</Name>
-      <Mode/>
-    </Label>
-      <Label>
-      <Value>true</Value>
-      <Name>traefik.frontend.headers.SSLRedirect</Name>
-      <Mode/>
-    </Label>
-    <Label>
-      <Value>315360000</Value>
-      <Name>traefik.frontend.headers.STSSeconds</Name>
-      <Mode/>
-    </Label>
-    <Label>
-      <Value>true</Value>
-      <Name>traefik.frontend.headers.browserXSSFilter</Name>
-      <Mode/>
-    </Label>
-    <Label>
-      <Value>true</Value>
-      <Name>traefik.frontend.headers.contentTypeNosniff</Name>
-      <Mode/>
-    </Label>
-    <Label>
-      <Value>true</Value>
-      <Name>traefik.frontend.headers.forceSTSHeader</Name>
-      <Mode/>
-    </Label>
-    <Label>
-      <Value>domain.com</Value>
-      <Name>traefik.frontend.headers.SSLHost</Name>
-      <Mode/>
-    </Label>
-    <Label>
-      <Value>true</Value>
-      <Name>traefik.frontend.headers.STSIncludeSubdomains</Name>
-      <Mode/>
-    </Label>
-    <Label>
-      <Value>true</Value>
-      <Name>traefik.frontend.headers.STSPreload</Name>
-      <Mode/>
-    </Label>
-    <Label>
-      <Value>true</Value>
-      <Name>traefik.frontend.headers.frameDeny</Name>
-      <Mode/>
-    </Label>
-  </Labels>
 </Container>

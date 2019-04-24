@@ -63,10 +63,10 @@
     </Volume>
   </Data>
   <Labels>
-    <Label>
+    <Variable>
       <Value>false</Value>
       <Name>traefik.enable</Name>
       <Mode/>
-    </Label>
+    </Variable>
   </Labels>
  </Container>

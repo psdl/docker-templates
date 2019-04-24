@@ -10,6 +10,7 @@
   <Project/>
   <Overview>
   Nextcloud
+    
   A safe home for all your data. Access and share your files, calendars, contacts, mail and more from any device, on your terms.
   </Overview>
   <Category>Cloud: Productivity: Tools: MediaServer:Other Network:Web</Category>
@@ -19,9 +20,10 @@
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <Date>2019-04-23</Date>
+  <Date>2019-04-24</Date>
   <Description>
   Nextcloud
+    
   A safe home for all your data. Access and share your files, calendars, contacts, mail and more from any device, on your terms.
   </Description>
   <Networking>

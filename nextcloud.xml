@@ -51,7 +51,7 @@
       <Name>traefik.frontend.rule</Name>
     </Variable>
     <Variable>
-      <Value>443</Value>
+      <Value>80</Value>
       <Name>traefik.port</Name>
     </Variable>
     <Variable>
@@ -105,11 +105,6 @@
       <Port>
         <HostPort>80</HostPort>
         <ContainerPort>80</ContainerPort>
-        <Protocol>tcp</Protocol>
-      </Port>
-      <Port>
-        <HostPort>443</HostPort>
-        <ContainerPort>443</ContainerPort>
         <Protocol>tcp</Protocol>
       </Port>
     </Publish>

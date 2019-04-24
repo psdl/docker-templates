@@ -19,6 +19,7 @@
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
+  <BindTime>true</BindTime>
   <Date>2019-04-24</Date>
   <Description>
   MariaDB

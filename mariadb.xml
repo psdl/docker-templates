@@ -38,28 +38,29 @@
       <Mode>rw</Mode>
     </Volume>
   </Data>
-  <Environment/>
-  <Labels>
-    <Label>
+  <Environment>
+    <Variable>
       <Value>0</Value>
       <Name>MYSQL_ROOT_PASSWORD</Name>
       <Mode/>
-    </Label>
-    <Label>
+    </Variable>
+    <Variable>
       <Value>0</Value>
       <Name>MYSQL_DATABASE</Name>
       <Mode/>
-    </Label>
-    <Label>
+    </Variable>
+    <Variable>
       <Value>0</Value>
       <Name>MYSQL_USER</Name>
       <Mode/>
-    </Label>
-    <Label>
+    </Variable>
+    <Variable>
       <Value>0</Value>
       <Name>MYSQL_PASSWORD</Name>
       <Mode/>
-    </Label>
+    </Variable>
+  </Environment>
+  <Labels>
     <Label>
       <Value>false</Value>
       <Name>traefik.enable</Name>

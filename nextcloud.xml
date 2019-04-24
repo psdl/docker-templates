@@ -134,7 +134,7 @@ A safe home for all your data. Access and share your files, calendars, contacts,
       <Mode/>
     </Label>
   </Labels>
-  <Config Name="HTTPS Port" Target="8443" Default="8443" Mode="tcp" Description="HTTPS port to expose." Type="Port" Display="always" Required="false" Mask="false">8443</Config>
+  <Config Name="HTTPS Port" Target="443" Default="443" Mode="tcp" Description="HTTPS port to expose." Type="Port" Display="always" Required="false" Mask="false">443</Config>
   <Config Name="config directory" Target="/var/www/html/config" Default="/mnt/user/appdata/nextcloud/config" Mode="rw" Description="Path to Nextcloud config directory" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/nextcloud/config</Config>
   <Config Name="data directory" Target="/var/www/html/data" Default="/mnt/user/appdata/nextcloud/data" Mode="rw" Description="Path to Nextcloud data directory" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/nextcloud/data</Config>  
   <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Set to false to NOT proxy this application." Type="Label" Display="always" Required="false" Mask="false">true</Config>

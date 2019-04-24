@@ -26,6 +26,19 @@ Nextcloud
     
 A safe home for all your data. Access and share your files, calendars, contacts, mail and more from any device, on your terms.
   </Description>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/nextcloud/config</HostDir>
+      <ContainerDir>/var/www/html/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/nextcloud/data</HostDir>
+      <ContainerDir>/var/www/html/data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
   <Networking>
     <Mode>bridge</Mode>
     <Publish>
@@ -41,28 +54,6 @@ A safe home for all your data. Access and share your files, calendars, contacts,
       </Port>
     </Publish>
   </Networking>
-  <Data>
-    <Volume>
-      <HostDir>/mnt/user/appdata/nextcloud/config</HostDir>
-      <ContainerDir>/var/www/html/config</ContainerDir>
-      <Mode>rw</Mode>
-    </Volume>
-    <Volume>
-      <HostDir>/mnt/user/appdata/nextcloud/data</HostDir>
-      <ContainerDir>/var/www/html/data</ContainerDir>
-      <Mode>rw</Mode>
-    </Volume>
-  </Data>
-  <Environment>
-    <Variable>
-      <Value>1000</Value>
-      <Name>PUID</Name>
-    </Variable>
-    <Variable>
-      <Value>100</Value>
-      <Name>PGID</Name>
-    </Variable>
-  </Environment>
   <Labels>
     <Label>
       <Value>true</Value>

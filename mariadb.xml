@@ -9,8 +9,9 @@
   <Support>https://github.com/psdl/docker-templates/issues</Support>
   <Project/>
   <Overview>
-    MariaDB[br][br]
-    MariaDB is a community-developed fork of the MySQL relational database management system intended to remain free under the GNU GPL.[br]
+  MariaDB
+  
+  MariaDB is a community-developed fork of the MySQL relational database management system intended to remain free under the GNU GPL.
   </Overview>
   <Category>Network:Other Other: Tools:</Category>
   <TemplateURL>https://raw.githubusercontent.com/psdl/docker-templates/master/mariadb.xml</TemplateURL>
@@ -19,8 +20,10 @@
   <PostArgs/>
   <CPUset/>
   <Description>
-    MariaDB[br][br]
-    MariaDB is a community-developed fork of the MySQL relational database management system intended to remain free under the GNU GPL.[br]  </Description>
+  MariaDB
+    
+  MariaDB is a community-developed fork of the MySQL relational database management system intended to remain free under the GNU GPL.
+  </Description>
   <Networking>
     <Mode>bridge</Mode>
     <Publish>

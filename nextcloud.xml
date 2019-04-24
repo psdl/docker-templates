@@ -101,7 +101,7 @@
     <Variable>
       <Value>SAMEORIGIN</Value>
       <Name>traefik.frontend.headers.customFrameOptionsValue</Name>
-    </Variable
+    </Variable>
   </Labels>
   <Networking>
     <Mode>bridge</Mode>

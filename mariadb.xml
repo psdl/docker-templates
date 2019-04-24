@@ -72,5 +72,5 @@
       <Mode/>
     </Label>
   </Labels>
-  <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Set to false to NOT proxy this application." Type="Label" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="traefik.enable" Target="traefik.enable" Default="false" Mode="" Description="Set to true to proxy this application." Type="Label" Display="always" Required="false" Mask="false">false</Config>
  </Container>

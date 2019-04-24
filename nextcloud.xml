@@ -30,7 +30,12 @@ A safe home for all your data. Access and share your files, calendars, contacts,
     <Mode>bridge</Mode>
     <Publish>
       <Port>
-        <HostPort>8443</HostPort>
+        <HostPort>80</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>443</HostPort>
         <ContainerPort>443</ContainerPort>
         <Protocol>tcp</Protocol>
       </Port>
@@ -134,6 +139,7 @@ A safe home for all your data. Access and share your files, calendars, contacts,
       <Mode/>
     </Label>
   </Labels>
+  <Config Name="HTTP Port" Target="80" Default="80" Mode="tcp" Description="HTTP port to expose." Type="Port" Display="always" Required="false" Mask="false">80</Config>
   <Config Name="HTTPS Port" Target="443" Default="443" Mode="tcp" Description="HTTPS port to expose." Type="Port" Display="always" Required="false" Mask="false">443</Config>
   <Config Name="config directory" Target="/var/www/html/config" Default="/mnt/user/appdata/nextcloud/config" Mode="rw" Description="Path to Nextcloud config directory" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/nextcloud/config</Config>
   <Config Name="data directory" Target="/var/www/html/data" Default="/mnt/user/appdata/nextcloud/data" Mode="rw" Description="Path to Nextcloud data directory" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/nextcloud/data</Config>  

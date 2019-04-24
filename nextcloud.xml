@@ -98,6 +98,10 @@
       <Value>true</Value>
       <Name>traefik.frontend.headers.frameDeny</Name>
     </Variable>
+    <Variable>
+      <Value>SAMEORIGIN</Value>
+      <Name>traefik.frontend.headers.customFrameOptionsValue</Name>
+    </Variable
   </Labels>
   <Networking>
     <Mode>bridge</Mode>

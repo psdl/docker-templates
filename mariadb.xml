@@ -39,15 +39,8 @@
       <Mode>rw</Mode>
     </Volume>
   </Data>
-  <Environment>
-    <Variable>
-      <Value>1000</Value>
-      <Name>PUID</Name>
-    </Variable>
-    <Variable>
-      <Value>100</Value>
-      <Name>PGID</Name>
-    </Variable>
+  <Environment/>
+  <Labels>
     <Variable>
       <Value></Value>
       <Name>MYSQL_ROOT_PASSWORD</Name>
@@ -64,8 +57,6 @@
       <Value></Value>
       <Name>MYSQL_PASSWORD</Name>
     </Variable>
-  </Environment>
-  <Labels>
     <Label>
       <Value>false</Value>
       <Name>traefik.enable</Name>

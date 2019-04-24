@@ -25,16 +25,6 @@
     
   MariaDB is a community-developed fork of the MySQL relational database management system intended to remain free under the GNU GPL.
   </Description>
-  <Networking>
-    <Mode>bridge</Mode>
-    <Publish>
-      <Port>
-        <HostPort>3306</HostPort>
-        <ContainerPort>3306</ContainerPort>
-        <Protocol>tcp</Protocol>
-      </Port>
-    </Publish>
-  </Networking>
   <Data>
     <Volume>
       <HostDir>/mnt/user/appdata/mysql</HostDir>
@@ -64,6 +54,16 @@
       <Mode/>
     </Variable>
   </Environment>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>3306</HostPort>
+        <ContainerPort>3306</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
   <Labels>
     <Label>
       <Value>false</Value>

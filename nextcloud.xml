@@ -9,8 +9,8 @@
   <Support>https://github.com/psdl/docker-templates/issues</Support>
   <Project/>
   <Overview>
-    Nextcloud[br][br]
-    A safe home for all your data. Access and share your files, calendars, contacts, mail and more from any device, on your terms.[br]
+  Nextcloud
+  A safe home for all your data. Access and share your files, calendars, contacts, mail and more from any device, on your terms.
   </Overview>
   <Category>Cloud: Productivity: Tools: MediaServer:Other Network:Web</Category>
   <WebUI>https://[IP]:[PORT]/</WebUI>

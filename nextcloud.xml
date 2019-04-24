@@ -36,7 +36,8 @@
       <Mode>rw</Mode>
     </Volume>
   </Data>
-  <Environment>
+  <Environment/>
+  <Labels>
     <Variable>
       <Value>true</Value>
       <Name>traefik.enable</Name>
@@ -97,7 +98,7 @@
       <Value>true</Value>
       <Name>traefik.frontend.headers.frameDeny</Name>
     </Variable>
-  </Environment>
+  <Labels/>
   <Networking>
     <Mode>bridge</Mode>
     <Publish>

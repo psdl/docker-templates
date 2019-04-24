@@ -98,7 +98,7 @@
       <Value>true</Value>
       <Name>traefik.frontend.headers.frameDeny</Name>
     </Variable>
-  <Labels/>
+  </Labels>
   <Networking>
     <Mode>bridge</Mode>
     <Publish>

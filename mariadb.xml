@@ -9,8 +9,7 @@
   <Support>https://github.com/psdl/docker-templates/issues</Support>
   <Project/>
   <Overview>
-  MariaDB
-  
+  MariaDB[br]
   MariaDB is a community-developed fork of the MySQL relational database management system intended to remain free under the GNU GPL.
   </Overview>
   <Category>Network:Other Other: Tools:</Category>
@@ -21,28 +20,27 @@
   <CPUset/>
   <Date>2019-04-24</Date>
   <Description>
-  MariaDB
-    
+  MariaDB[br]
   MariaDB is a community-developed fork of the MySQL relational database management system intended to remain free under the GNU GPL.
   </Description>
   <Environment>
     <Variable>
-      <Value>0</Value>
+      <Value></Value>
       <Name>MYSQL_ROOT_PASSWORD</Name>
       <Mode/>
     </Variable>
     <Variable>
-      <Value>0</Value>
+      <Value></Value>
       <Name>MYSQL_DATABASE</Name>
       <Mode/>
     </Variable>
     <Variable>
-      <Value>0</Value>
+      <Value></Value>
       <Name>MYSQL_USER</Name>
       <Mode/>
     </Variable>
     <Variable>
-      <Value>0</Value>
+      <Value></Value>
       <Name>MYSQL_PASSWORD</Name>
       <Mode/>
     </Variable>
@@ -50,11 +48,11 @@
   <Networking>
     <Mode>bridge</Mode>
     <Publish>
-    <Port>
-      <HostPort>3306</HostPort>
-      <ContainerPort>3306</ContainerPort>
-      <Protocol>tcp</Protocol>
-    </Port>
+      <Port>
+        <HostPort>3306</HostPort>
+        <ContainerPort>3306</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
     </Publish>
   </Networking>
   <Data>
@@ -71,9 +69,9 @@
       <Mode/>
     </Label>
   </Labels>
-  <Config Name="MYSQL_ROOT_PASSWORD" Target="MYSQL_ROOT_PASSWORD" Default="0" Mode="" Description="This variable is mandatory and specifies the password that will be set for the MariaDB root superuser account." Type="Variable" Display="always" Required="true" Mask="true">0</Config>
-  <Config Name="MYSQL_DATABASE" Target="MYSQL_DATABASE" Default="0" Mode="" Description="This variable is optional and allows you to specify the name of a database to be created on image startup." Type="Variable" Display="always" Required="false" Mask="false">0</Config>
-  <Config Name="MYSQL_USER" Target="MYSQL_USER" Default="0" Mode="" Description="These variables are optional, used in conjunction to create a new user and to set that users password. This user will be granted superuser permissions for the database specified by the MYSQL_DATABASE variable. Both variables are required for a user to be created." Type="Variable" Display="always" Required="false" Mask="false">0</Config>
-  <Config Name="MYSQL_PASSWORD" Target="MYSQL_PASSWORD" Default="0" Mode="" Description="Set the Password for the MYSQL_USER" Type="Variable" Display="always" Required="false" Mask="true">0</Config>
+  <Config Name="MYSQL_ROOT_PASSWORD" Target="MYSQL_ROOT_PASSWORD" Default="" Mode="" Description="This variable is mandatory and specifies the password that will be set for the MariaDB root superuser account." Type="Variable" Display="always" Required="true" Mask="true"></Config>
+  <Config Name="MYSQL_DATABASE" Target="MYSQL_DATABASE" Default="" Mode="" Description="This variable is optional and allows you to specify the name of a database to be created on image startup." Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="MYSQL_USER" Target="MYSQL_USER" Default="" Mode="" Description="These variables are optional, used in conjunction to create a new user and to set that users password. This user will be granted superuser permissions for the database specified by the MYSQL_DATABASE variable. Both variables are required for a user to be created." Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="MYSQL_PASSWORD" Target="MYSQL_PASSWORD" Default="" Mode="" Description="Set the Password for the MYSQL_USER" Type="Variable" Display="always" Required="false" Mask="true"></Config>
   <Config Name="traefik.enable" Target="traefik.enable" Default="false" Mode="" Description="Set to true to proxy this application." Type="Label" Display="always" Required="false" Mask="false">false</Config>
  </Container>

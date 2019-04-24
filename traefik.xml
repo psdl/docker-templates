@@ -17,7 +17,7 @@ Traefik is a modern HTTP reverse proxy and load balancer that makes deploying mi
     
 Please create your traefik.toml with your settings !
   </Overview>
-  <WebUI>https://[IP]:[PORT]</WebUI>
+  <WebUI>http://[IP]:[PORT]</WebUI>
   <Category>Network:Web Network:Proxy</Category>
   <WebUI>http://[IP]:[PORT]/</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/psdl/docker-templates/master/traefik.xml</TemplateURL>

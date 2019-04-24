@@ -19,7 +19,7 @@
   <Category>Network:Web Network:Proxy</Category>
   <WebUI>http://127.0.0.1:8080</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/psdl/docker-templates/master/traefik.xml</TemplateURL>
-  <Icon>https://raw.githubusercontent.com/psdl/docker-templates/master/images/traefik.png</Icon>
+  <Icon>https://github.com/psdl/docker-templates/blob/images/traefik.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>

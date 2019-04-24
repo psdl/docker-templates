@@ -61,7 +61,7 @@
       <Value>bridge</Value>
       <Name>traefik.docker.network</Name>
     </Variable>
-      <Label>
+    <Variable>
       <Value>true</Value>
       <Name>traefik.frontend.headers.SSLRedirect</Name>
     </Variable>

@@ -44,18 +44,22 @@
     <Variable>
       <Value></Value>
       <Name>MYSQL_ROOT_PASSWORD</Name>
+      <Mode/>
     </Variable>
     <Variable>
       <Value></Value>
       <Name>MYSQL_DATABASE</Name>
+      <Mode/>
     </Variable>
     <Variable>
       <Value></Value>
       <Name>MYSQL_USER</Name>
+      <Mode/>
     </Variable>
     <Variable>
       <Value></Value>
       <Name>MYSQL_PASSWORD</Name>
+      <Mode/>
     </Variable>
     <Label>
       <Value>false</Value>

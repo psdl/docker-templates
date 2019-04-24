@@ -4,7 +4,7 @@
   <Repository>nextcloud:latest</Repository>
   <Registry>https://hub.docker.com/_/nextcloud</Registry>
   <Network>bridge</Network>
-  <Shell>bash</Shell>
+  <Shell>sh</Shell>
   <Privileged>false</Privileged>
   <Support>https://github.com/psdl/docker-templates/issues</Support>
   <Project/>
@@ -13,7 +13,7 @@
     A safe home for all your data. Access and share your files, calendars, contacts, mail and more from any device, on your terms.[br]
   </Overview>
   <Category>Cloud: Productivity: Tools: MediaServer:Other Network:Web</Category>
-  <WebUI>https://[IP]:[PORT:443]/</WebUI>
+  <WebUI>https://[IP]:[PORT]/</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/psdl/docker-templates/master/nextcloud.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/psdl/docker-templates/images/nextcloud.png</Icon>
   <ExtraParams/>
@@ -21,8 +21,8 @@
   <CPUset/>
   <Date>2019-04-23</Date>
   <Description>
-    Nextcloud[br][br]
-    A safe home for all your data. Access and share your files, calendars, contacts, mail and more from any device, on your terms.[br]
+  Nextcloud
+  A safe home for all your data. Access and share your files, calendars, contacts, mail and more from any device, on your terms.
   </Description>
   <Networking>
     <Mode>bridge</Mode>

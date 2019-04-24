@@ -14,7 +14,7 @@ Nextcloud
 A safe home for all your data. Access and share your files, calendars, contacts, mail and more from any device, on your terms.
   </Overview>
   <Category>Cloud: Productivity: Tools: MediaServer:Other Network:Web</Category>
-  <WebUI>https://[IP]:[PORT]/</WebUI>
+  <WebUI>http://[IP]:[PORT]/</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/psdl/docker-templates/master/nextcloud.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/psdl/docker-templates/images/nextcloud.png</Icon>
   <ExtraParams/>

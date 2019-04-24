@@ -14,7 +14,7 @@
   </Overview>
   <Category>Network:Other Other: Tools:</Category>
   <TemplateURL>https://raw.githubusercontent.com/psdl/docker-templates/master/mariadb.xml</TemplateURL>
-  <Icon>https://raw.githubusercontent.com/psdl/docker-templates/master/images/mariadb.png</Icon>
+  <Icon>https://raw.githubusercontent.com/psdl/docker-templates/images/mariadb.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>

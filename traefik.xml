@@ -34,6 +34,19 @@ Traefik is a modern HTTP reverse proxy and load balancer that makes deploying mi
   
 Please create your traefik.toml with your settings !
   </Description>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/traefik</HostDir>
+      <ContainerDir>/etc/traefik</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/var/run/docker.sock</HostDir>
+      <ContainerDir>/var/run/docker.sock</ContainerDir>
+      <Mode>ro</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
   <Networking>
     <Mode>bridge</Mode>
     <Publish>
@@ -54,19 +67,6 @@ Please create your traefik.toml with your settings !
       </Port>
     </Publish>
   </Networking>
-  <Data>
-    <Volume>
-      <HostDir>/mnt/user/appdata/traefik</HostDir>
-      <ContainerDir>/etc/traefik</ContainerDir>
-      <Mode>rw</Mode>
-    </Volume>
-    <Volume>
-      <HostDir>/var/run/docker.sock</HostDir>
-      <ContainerDir>/var/run/docker.sock</ContainerDir>
-      <Mode>ro</Mode>
-    </Volume>
-  </Data>
-  <Environment/>
   <Labels>
     <Label>
       <Value>true</Value>

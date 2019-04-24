@@ -15,7 +15,7 @@
   <Category>Cloud: Productivity: Tools: MediaServer:Other Network:Web</Category>
   <WebUI>https://[IP]:[PORT:443]/</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/psdl/docker-templates/master/nextcloud.xml</TemplateURL>
-  <Icon>https://raw.githubusercontent.com/psdl/docker-templates/master/images/nextcloud.png</Icon>
+  <Icon>https://raw.githubusercontent.com/psdl/docker-templates/images/nextcloud.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>

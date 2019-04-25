@@ -19,7 +19,6 @@ Please create your traefik.toml with your settings !
   </Overview>
   <WebUI>http://[IP]:[PORT]</WebUI>
   <Category>Network:Web Network:Proxy</Category>
-  <WebUI>http://[IP]:[PORT]/</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/psdl/docker-templates/master/traefik.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/psdl/docker-templates/images/traefik.png</Icon>
   <ExtraParams/>

@@ -5,11 +5,12 @@
   <Registry>https://hub.docker.com/_/mariadb</Registry>
   <Network>bridge</Network>
   <Shell>sh</Shell>
+  <BindTime>true</BindTime>
   <Privileged>false</Privileged>
   <Support>https://github.com/psdl/docker-templates/issues</Support>
   <Project/>
   <Overview>
-  MariaDB[br]
+  MariaDB
   MariaDB is a community-developed fork of the MySQL relational database management system intended to remain free under the GNU GPL.
   </Overview>
   <Category>Network:Other Other: Tools:</Category>
@@ -20,14 +21,13 @@
   <CPUset/>
   <Date>2019-04-24</Date>
   <Description>
-  MariaDB[br]
+  MariaDB
   MariaDB is a community-developed fork of the MySQL relational database management system intended to remain free under the GNU GPL.
   </Description>
   <Environment>
     <Variable>
       <Value></Value>
       <Name>MYSQL_ROOT_PASSWORD</Name>
-      <Mode/>
     </Variable>
     <Variable>
       <Value></Value>

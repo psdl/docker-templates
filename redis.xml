@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+  <Name>redis</Name>
+  <Overview>
+   Redis[br][br]
+   Redis is an open-source, networked, in-memory, key-value data store with optional durability.[br][br]
+  
+   If you plan to use Redis just as a cache where every key will have an expire set, you may consider using the following configuration instead:[br]
+   > maxmemory 2mb
+   > maxmemory-policy allkeys-lru
+  </Overview>
+  <Registry>https://hub.docker.com/_/redis</Registry>
+  <Repository>redis:latest</Repository>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/psdl/docker-templates/issues</Support>
+  <Network>traefik_proxy</Network>
+  <Icon>https://raw.githubusercontent.com/psdl/docker-templates/images/redis.png</Icon>
+  <Category>Network:Other Other: Tools:</Category>
+  <Config
+    Type="Path"
+    Name="/usr/local/etc/redis"
+    Target="/usr/local/etc/redis"
+    Default="/mnt/user/appdata/redis"
+    Mode="rw"
+    Description="redis config directory."
+    Required="true">/mnt/user/appdata/redis
+</Config>
+  <Config
+    Type="Variable"
+    Name="traefik.enable"
+    Target="traefik.enable"
+    Default="false"
+    Description="Set to true to enable this container in Traefik."
+    Mask="false"
+    Display="always"
+    Required="true">false
+  </Config>
+  <Config
+    Type="Port"
+    Name="mysqld.sock port to expose"
+    Target="6379"
+    Default="6379"
+    Mode="tcp"
+    Description="redis Port"
+    Display="always"
+    Required="true">6379
+  </Config>
+</Container>

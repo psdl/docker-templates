@@ -23,8 +23,7 @@
     Default="/mnt/user/appdata/redis"
     Mode="rw"
     Description="redis config directory."
-    Required="true">/mnt/user/appdata/redis
-</Config>
+    Required="true">/mnt/user/appdata/redis</Config>
   <Config
     Type="Variable"
     Name="traefik.enable"
@@ -33,8 +32,7 @@
     Description="Set to true to enable this container in Traefik."
     Mask="false"
     Display="always"
-    Required="true">false
-  </Config>
+    Required="true">false</Config>
   <Config
     Type="Port"
     Name="mysqld.sock port to expose"
@@ -43,6 +41,5 @@
     Mode="tcp"
     Description="redis Port"
     Display="always"
-    Required="true">6379
-  </Config>
+    Required="true">6379</Config>
 </Container>

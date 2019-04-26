@@ -77,11 +77,11 @@
     Type="Label" 
     Name="traefik.frontend.rule" 
     Target="traefik.frontend.rule" 
-    Default="traefik.domain.com" 
+    Default="Host:traefik.domain.com" 
     Description="Overrides the default frontend rule. Default: Host:{containerName}.{domain} if you are using docker-compose." 
     Mask="false" 
     Display="always-hide" 
-    Required="true">traefik.domain.com</Config>
+    Required="true">Host:traefik.domain.com</Config>
   <Config 
     Type="Label" 
     Name="traefik.port" 

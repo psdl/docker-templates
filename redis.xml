@@ -32,7 +32,7 @@
     Default="99" 
     Description="User ID." 
     Mask="false" 
-    Display="always-hide" 
+    Display="advanced" 
     Required="true">99</Config>
   <Config 
     Type="Variable" 
@@ -41,7 +41,7 @@
     Default="100" 
     Description="Group ID." 
     Mask="false" 
-    Display="always-hide" 
+    Display="advanced" 
     Required="true">100</Config>
   <Config 
     Type="Variable"
@@ -59,6 +59,6 @@
     Default="6379" 
     Mode="tcp" 
     Description="Redis Port to expose" 
-    Display="advanced" 
+    Display="always" 
     Required="true">6379</Config>
 </Container>

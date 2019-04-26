@@ -10,158 +10,159 @@
   <Privileged>false</Privileged>
   <Support>https://github.com/psdl/docker-templates/issues</Support>
   <Network>traefik_proxy</Network>
+  <BindTime>true</BindTime>
   <WebUI>http://[IP]:[PORT:7080]/</WebUI>
   <Icon>https://raw.githubusercontent.com/psdl/docker-templates/images/nextcloud.png</Icon>
   <Category>Cloud: Productivity: Tools: MediaServer:Other Network:Web</Category>
-  <Config
-    Type="Path"
-    Name="/var/www/html/config"
-    Target="/var/www/html/config"
-    Default="/mnt/user/appdata/nextcloud/config"
-    Mode="rw"
-    Description="local configuration."
+  <Config 
+    Type="Path" 
+    Name="/var/www/html/config" 
+    Target="/var/www/html/config" 
+    Default="/mnt/user/appdata/nextcloud/config" 
+    Mode="rw" 
+    Description="local configuration." 
     Required="true">/mnt/user/appdata/nextcloud/config</Config>
-  <Config
-    Type="Path"
-    Name="/var/www/html/data"
-    Target="/var/www/html/data"
-    Default="/mnt/user/appdata/nextcloud/data"
-    Mode="rw"
-    Description="Data directory."
+  <Config 
+    Type="Path" 
+    Name="/var/www/html/data" 
+    Target="/var/www/html/data" 
+    Default="/mnt/user/appdata/nextcloud/data" 
+    Mode="rw" 
+    Description="Data directory." 
     Required="true">/mnt/user/appdata/nextcloud/data</Config>
-  <Config
-    Type="Variable"
-    Name="traefik.enable"
-    Target="traefik.enable"
-    Default="true"
-    Description="Set to true to enable this container in Traefik."
-    Mask="false"
-    Display="always"
+  <Config 
+    Type="Variable" 
+    Name="traefik.enable" 
+    Target="traefik.enable" 
+    Default="true" 
+    Description="Set to true to enable this container in Traefik." 
+    Mask="false" 
+    Display="always" 
     Required="true">true</Config>
-  <Config
-    Type="Variable"
-    Name="traefik.backend"
-    Target="traefik.backend"
-    Default="nextcloud"
-    Description="Overrides the container name by foo in the generated name of the backend."
-    Mask="false"
-    Display="always"
+  <Config 
+    Type="Variable" 
+    Name="traefik.backend" 
+    Target="traefik.backend" 
+    Default="nextcloud" 
+    Description="Overrides the container name by foo in the generated name of the backend." 
+    Mask="false" 
+    Display="always" 
     Required="true">nextcloud</Config>
-  <Config
-    Type="Variable"
-    Name="traefik.frontend.rule"
-    Target="traefik.frontend.rule"
-    Default="nextcloud.domain.com"
-    Description="Overrides the default frontend rule. Default: Host:{containerName}.{domain} if you are using docker-compose."
-    Mask="false"
-    Display="always"
+  <Config 
+    Type="Variable" 
+    Name="traefik.frontend.rule" 
+    Target="traefik.frontend.rule" 
+    Default="nextcloud.domain.com" 
+    Description="Overrides the default frontend rule. Default: Host:{containerName}.{domain} if you are using docker-compose." 
+    Mask="false" 
+    Display="always" 
     Required="true">nextcloud.domain.com</Config>
-  <Config
-    Type="Variable"
-    Name="traefik.port"
-    Target="traefik.port"
-    Default="80"
-    Description="Registers this port. Useful when the container exposes multiples ports."
-    Mask="false"
-    Display="always"
+  <Config 
+    Type="Variable" 
+    Name="traefik.port" 
+    Target="traefik.port" 
+    Default="80" 
+    Description="Registers this port. Useful when the container exposes multiples ports." 
+    Mask="false" 
+    Display="always" 
     Required="true">80</Config>
-  <Config
-    Type="Variable"
-    Name="traefik.docker.network"
-    Target="traefik.docker.network"
-    Default="traefik_proxy"
-    Description="Overrides the default docker network to use for connections to the container."
-    Mask="false"
-    Display="always"
+  <Config 
+    Type="Variable" 
+    Name="traefik.docker.network" 
+    Target="traefik.docker.network" 
+    Default="traefik_proxy" 
+    Description="Overrides the default docker network to use for connections to the container." 
+    Mask="false" 
+    Display="always" 
     Required="true">traefik_proxy</Config>
-  <Config
-    Type="Variable"
-    Name="traefik.frontend.headers.SSLRedirect"
-    Target="traefik.frontend.headers.SSLRedirect"
-    Default="true"
-    Description="Forces the frontend to redirect to SSL if a non-SSL request is sent."
-    Mask="false"
-    Display="always"
+  <Config 
+    Type="Variable" 
+    Name="traefik.frontend.headers.SSLRedirect" 
+    Target="traefik.frontend.headers.SSLRedirect" 
+    Default="true" 
+    Description="Forces the frontend to redirect to SSL if a non-SSL request is sent." 
+    Mask="false" 
+    Display="always" 
     Required="true">true</Config>
-  <Config
-    Type="Variable"
-    Name="traefik.frontend.headers.STSSeconds"
-    Target="traefik.frontend.headers.STSSeconds"
-    Default="315360000"
-    Description="Sets the max-age of the STS header."
-    Mask="false"
-    Display="always"
+  <Config 
+    Type="Variable" 
+    Name="traefik.frontend.headers.STSSeconds" 
+    Target="traefik.frontend.headers.STSSeconds" 
+    Default="315360000" 
+    Description="Sets the max-age of the STS header." 
+    Mask="false" 
+    Display="always" 
     Required="true">315360000</Config>
-  <Config
-    Type="Variable"
-    Name="traefik.frontend.headers.browserXSSFilter"
-    Target="traefik.frontend.headers.browserXSSFilter"
-    Default="true"
-    Description="Adds the X-XSS-Protection header with the value 1; mode=block."
-    Mask="false"
-    Display="always"
+  <Config 
+    Type="Variable" 
+    Name="traefik.frontend.headers.browserXSSFilter" 
+    Target="traefik.frontend.headers.browserXSSFilter" 
+    Default="true" 
+    Description="Adds the X-XSS-Protection header with the value 1; mode=block." 
+    Mask="false" 
+    Display="always" 
     Required="true">true</Config>
-  <Config
-    Type="Variable"
-    Name="traefik.frontend.headers.contentTypeNosniff"
-    Target="traefik.frontend.headers.contentTypeNosniff"
-    Default="true"
-    Description="Adds the X-Content-Type-Options header with the value nosniff."
-    Mask="false"
-    Display="always"
+  <Config 
+    Type="Variable" 
+    Name="traefik.frontend.headers.contentTypeNosniff" 
+    Target="traefik.frontend.headers.contentTypeNosniff" 
+    Default="true" 
+    Description="Adds the X-Content-Type-Options header with the value nosniff." 
+    Mask="false" 
+    Display="always" 
     Required="true">true</Config>
-  <Config
-    Type="Variable"
-    Name="traefik.frontend.headers.forceSTSHeader"
-    Target="traefik.frontend.headers.forceSTSHeader"
-    Default="true"
-    Description="Adds the STS header to non-SSL requests."
-    Mask="false"
-    Display="always"
+  <Config 
+    Type="Variable" 
+    Name="traefik.frontend.headers.forceSTSHeader" 
+    Target="traefik.frontend.headers.forceSTSHeader" 
+    Default="true" 
+    Description="Adds the STS header to non-SSL requests." 
+    Mask="false" 
+    Display="always" 
     Required="true">true</Config>
-  <Config
-    Type="Variable"
-    Name="traefik.frontend.headers.SSLHost"
-    Target="traefik.frontend.headers.SSLHost"
-    Default="domain.com"
-    Description="This setting configures the hostname that redirects will be based on. Default is NOTHING, which is the same host as the request."
-    Mask="false"
-    Display="always"
+  <Config 
+    Type="Variable" 
+    Name="traefik.frontend.headers.SSLHost" 
+    Target="traefik.frontend.headers.SSLHost" 
+    Default="domain.com" 
+    Description="This setting configures the hostname that redirects will be based on. Default is NOTHING, which is the same host as the request." 
+    Mask="false" 
+    Display="always" 
     Required="true">domain.com</Config>
-  <Config
-    Type="Variable"
-    Name="traefik.frontend.headers.STSIncludeSubdomains"
-    Target="traefik.frontend.headers.STSIncludeSubdomains"
-    Default="true"
-    Description="Adds the IncludeSubdomains section of the STS header."
-    Mask="false"
-    Display="always"
+  <Config 
+    Type="Variable" 
+    Name="traefik.frontend.headers.STSIncludeSubdomains" 
+    Target="traefik.frontend.headers.STSIncludeSubdomains" 
+    Default="true" 
+    Description="Adds the IncludeSubdomains section of the STS header." 
+    Mask="false" 
+    Display="always" 
     Required="true">true</Config>
-  <Config
-    Type="Variable"
-    Name="traefik.frontend.headers.STSPreload"
-    Target="traefik.frontend.headers.STSPreload"
-    Default="true"
-    Description="Adds the preload flag to the STS header."
-    Mask="false"
-    Display="always"
+  <Config 
+    Type="Variable" 
+    Name="traefik.frontend.headers.STSPreload" 
+    Target="traefik.frontend.headers.STSPreload" 
+    Default="true" 
+    Description="Adds the preload flag to the STS header." 
+    Mask="false" 
+    Display="always" 
     Required="true">true</Config>
-  <Config
-    Type="Variable"
-    Name="traefik.frontend.headers.customFrameOptionsValue"
-    Target="traefik.frontend.headers.customFrameOptionsValue"
-    Default="SAMEORIGIN"
-    Description="Overrides the X-Frame-Options header with the custom value."
-    Mask="false"
-    Display="always"
+  <Config 
+    Type="Variable" 
+    Name="traefik.frontend.headers.customFrameOptionsValue" 
+    Target="traefik.frontend.headers.customFrameOptionsValue" 
+    Default="SAMEORIGIN" 
+    Description="Overrides the X-Frame-Options header with the custom value." 
+    Mask="false" 
+    Display="always" 
     Required="true">SAMEORIGIN</Config>
-  <Config
-    Type="Port"
-    Name="HTTP Port"
-    Target="80"
-    Default="7080"
-    Mode="tcp"
-    Description="HTTP Port"
-    Display="always"
+  <Config 
+    Type="Port" 
+    Name="HTTP Port" 
+    Target="80" 
+    Default="7080" 
+    Mode="tcp" 
+    Description="HTTP Port" 
+    Display="always" 
     Required="true">7080</Config>
 </Container>

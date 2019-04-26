@@ -36,7 +36,7 @@
     Target="PUID" 
     Default="99" 
     Description="User ID." 
-    Mask="true" 
+    Mask="false" 
     Display="hide" 
     Required="true">99</Config>
   <Config 
@@ -45,7 +45,7 @@
     Target="GUID" 
     Default="100" 
     Description="Group ID." 
-    Mask="true" 
+    Mask="false" 
     Display="hide" 
     Required="true">100</Config>
   <Config 

@@ -25,6 +25,14 @@
     Description="emby config directory." 
     Required="true">/mnt/user/appdata/emby</Config>
   <Config 
+    Type="Path" 
+    Name="/mnt" 
+    Target="/mnt" 
+    Default="/mnt/user/media/emby/" 
+    Mode="rw" 
+    Description="emby config directory." 
+    Required="true">/mnt/user/media/emby</Config>
+  <Config 
     Type="Variable" 
     Name="UID" 
     Target="UID" 

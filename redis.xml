@@ -32,7 +32,7 @@
     Default="99" 
     Description="User ID." 
     Mask="false" 
-    Display="hide" 
+    Display="always-hide" 
     Required="true">99</Config>
   <Config 
     Type="Variable" 
@@ -41,7 +41,7 @@
     Default="100" 
     Description="Group ID." 
     Mask="false" 
-    Display="hide" 
+    Display="always-hide" 
     Required="true">100</Config>
   <Config 
     Type="Variable"
@@ -50,7 +50,7 @@
     Default="false" 
     Description="Set to true to enable this container in Traefik." 
     Mask="false" 
-    Display="always" 
+    Display="always-hide" 
     Required="true">false</Config>
   <Config 
     Type="Port" 

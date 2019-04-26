@@ -20,7 +20,7 @@
     Type="Path" 
     Name="/config" 
     Target="/config" 
-    Default="/mnt/user/appdata/emby/" 
+    Default="/mnt/user/appdata/emby" 
     Mode="rw" 
     Description="emby config directory." 
     Required="true">/mnt/user/appdata/emby</Config>
@@ -28,7 +28,7 @@
     Type="Path" 
     Name="/mnt" 
     Target="/mnt" 
-    Default="/mnt/user/media/emby/" 
+    Default="/mnt/user/media/emby" 
     Mode="rw" 
     Description="emby config directory." 
     Required="true">/mnt/user/media/emby</Config>

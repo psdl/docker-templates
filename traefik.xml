@@ -43,7 +43,7 @@
     Name="traefik.enable"
     Target="traefik.enable"
     Default="true"
-    Description="traefik.enable"
+    Description="Set to true to enable this container in Traefik."
     Mask="false"
     Display="always"
     Required="true">true
@@ -53,7 +53,7 @@
     Name="traefik.backend"
     Target="traefik.backend"
     Default="traefik"
-    Description="traefik.backend"
+    Description="Overrides the container name by foo in the generated name of the backend."
     Mask="false"
     Display="always"
     Required="true">traefik
@@ -63,7 +63,7 @@
     Name="traefik.frontend.rule"
     Target="traefik.frontend.rule"
     Default="traefik.domain.com"
-    Description="traefik.frontend.rule"
+    Description="Overrides the default frontend rule. Default: Host:{containerName}.{domain} if you are using docker-compose."
     Mask="false"
     Display="always"
     Required="true">traefik.domain.com
@@ -73,7 +73,7 @@
     Name="traefik.port"
     Target="traefik.port"
     Default="8080"
-    Description="traefik.port"
+    Description="Registers this port. Useful when the container exposes multiples ports."
     Mask="false"
     Display="always"
     Required="true">8080
@@ -83,7 +83,7 @@
     Name="traefik.docker.network"
     Target="traefik.docker.network"
     Default="traefik_proxy"
-    Description="traefik.docker.network"
+    Description="Overrides the default docker network to use for connections to the container."
     Mask="false"
     Display="always"
     Required="true">traefik_proxy
@@ -93,7 +93,7 @@
     Name="traefik.frontend.headers.SSLRedirect"
     Target="traefik.frontend.headers.SSLRedirect"
     Default="true"
-    Description="traefik.frontend.headers.SSLRedirect"
+    Description="Forces the frontend to redirect to SSL if a non-SSL request is sent."
     Mask="false"
     Display="always"
     Required="true">true
@@ -103,7 +103,7 @@
     Name="traefik.frontend.headers.STSSeconds"
     Target="traefik.frontend.headers.STSSeconds"
     Default="315360000"
-    Description="traefik.frontend.headers.STSSeconds"
+    Description="Sets the max-age of the STS header."
     Mask="false"
     Display="always"
     Required="true">315360000
@@ -113,7 +113,7 @@
     Name="traefik.frontend.headers.browserXSSFilter"
     Target="traefik.frontend.headers.browserXSSFilter"
     Default="true"
-    Description="traefik.frontend.headers.browserXSSFilter"
+    Description="Adds the X-XSS-Protection header with the value 1; mode=block."
     Mask="false"
     Display="always"
     Required="true">true
@@ -123,7 +123,7 @@
     Name="traefik.frontend.headers.contentTypeNosniff"
     Target="traefik.frontend.headers.contentTypeNosniff"
     Default="true"
-    Description="traefik.frontend.headers.contentTypeNosniff"
+    Description="Adds the X-Content-Type-Options header with the value nosniff."
     Mask="false"
     Display="always"
     Required="true">true
@@ -133,7 +133,7 @@
     Name="traefik.frontend.headers.forceSTSHeader"
     Target="traefik.frontend.headers.forceSTSHeader"
     Default="true"
-    Description="traefik.frontend.headers.forceSTSHeader"
+    Description="Adds the STS header to non-SSL requests."
     Mask="false"
     Display="always"
     Required="true">true
@@ -143,7 +143,7 @@
     Name="traefik.frontend.headers.SSLHost"
     Target="traefik.frontend.headers.SSLHost"
     Default="domain.com"
-    Description="traefik.frontend.headers.SSLHost"
+    Description="This setting configures the hostname that redirects will be based on. Default is NOTHING, which is the same host as the request."
     Mask="false"
     Display="always"
     Required="true">domain.com
@@ -153,7 +153,7 @@
     Name="traefik.frontend.headers.STSIncludeSubdomains"
     Target="traefik.frontend.headers.STSIncludeSubdomains"
     Default="true"
-    Description="traefik.frontend.headers.STSIncludeSubdomains"
+    Description="Adds the IncludeSubdomains section of the STS header."
     Mask="false"
     Display="always"
     Required="true">true
@@ -163,7 +163,7 @@
     Name="traefik.frontend.headers.STSPreload"
     Target="traefik.frontend.headers.STSPreload"
     Default="true"
-    Description="traefik.frontend.headers.STSPreload"
+    Description="Adds the preload flag to the STS header."
     Mask="false"
     Display="always"
     Required="true">true
@@ -173,7 +173,7 @@
     Name="traefik.frontend.headers.frameDeny"
     Target="traefik.frontend.headers.frameDeny"
     Default="true"
-    Description="traefik.frontend.headers.frameDeny"
+    Description="Adds the X-Frame-Options header with the value of DENY."
     Mask="false"
     Display="always"
     Required="true">true

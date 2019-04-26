@@ -89,7 +89,7 @@
     Target="3306" 
     Default="3306" 
     Mode="tcp" 
-    Description="HTTP Port" 
+    Description="mysqld.sock port to expose" 
     Display="always" 
     Required="true">3306</Config>
 </Container>

@@ -75,7 +75,7 @@
     Display="always-hide" 
     Required="true"></Config>
   <Config 
-    Type="Variable" 
+    Type="Label" 
     Name="traefik.enable" 
     Target="traefik.enable" 
     Default="false" 

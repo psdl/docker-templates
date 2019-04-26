@@ -35,7 +35,7 @@
     Target="/var/run/docker.sock"
     Default="/var/run/docker.sock"
     Mode="ro"
-    Description="UNIX Docker socket"
+    Description="Docker server endpoint. Can be a tcp or a unix socket endpoint."
     Required="true">/var/run/docker.sock
   </Config>
   <Config

@@ -94,7 +94,7 @@
     Description="Registers this port. Useful when the container exposes multiples ports." 
     Mask="false" 
     Display="always-hide" 
-    Required="true">8080</Config>
+    Required="true">8096</Config>
   <Config 
     Type="Label" 
     Name="traefik.docker.network" 

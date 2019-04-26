@@ -27,7 +27,7 @@
     Default="99" 
     Description="User ID." 
     Mask="false" 
-    Display="hide" 
+    Display="always-hide" 
     Required="true">99</Config>
   <Config 
     Type="Variable" 
@@ -36,7 +36,7 @@
     Default="100" 
     Description="Group ID." 
     Mask="false" 
-    Display="hide" 
+    Display="always-hide" 
     Required="true">100</Config>
   <Config 
     Type="Variable" 
@@ -45,7 +45,7 @@
     Default="" 
     Description="This variable is mandatory and specifies the password that will be set for the MariaDB root superuser account." 
     Mask="true" 
-    Display="always" 
+    Display="always-hide" 
     Required="true"></Config>
   <Config 
     Type="Variable" 
@@ -54,7 +54,7 @@
     Default="" 
     Description="This variable is optional and allows you to specify the name of a database to be created on image startup. If a user or password was supplied then that user will be granted superuser access to this database." 
     Mask="false" 
-    Display="always" 
+    Display="always-hide" 
     Required="true"></Config>
   <Config 
     Type="Variable" 
@@ -63,7 +63,7 @@
     Default="" 
     Description="This user will be granted superuser permissions for the database specified by the MYSQL_DATABASE variable." 
     Mask="false" 
-    Display="always" 
+    Display="always-hide" 
     Required="true"></Config>
   <Config 
     Type="Variable" 
@@ -72,7 +72,7 @@
     Default="" 
     Description="This sets the password for the MYSQL_USER." 
     Mask="true" 
-    Display="always" 
+    Display="always-hide" 
     Required="true"></Config>
   <Config 
     Type="Variable" 
@@ -81,7 +81,7 @@
     Default="false" 
     Description="Set to true to enable this container in Traefik." 
     Mask="false" 
-    Display="always" 
+    Display="always-hide" 
     Required="true">false</Config>
   <Config 
     Type="Port" 
@@ -90,6 +90,6 @@
     Default="3306" 
     Mode="tcp" 
     Description="HTTP Port" 
-    Display="always" 
+    Display="advanced" 
     Required="true">3306</Config>
 </Container>

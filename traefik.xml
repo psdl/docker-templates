@@ -27,8 +27,7 @@
     Default="/mnt/user/appdata/traefik"
     Mode="rw"
     Description="traefik config directory."
-    Required="true">/mnt/user/appdata/traefik
-  </Config>
+    Required="true">/mnt/user/appdata/traefik</Config>
   <Config
     Type="Path"
     Name="/var/run/docker.sock"
@@ -36,8 +35,7 @@
     Default="/var/run/docker.sock"
     Mode="ro"
     Description="Docker server endpoint. Can be a tcp or a unix socket endpoint."
-    Required="true">/var/run/docker.sock
-  </Config>
+    Required="true">/var/run/docker.sock</Config>
   <Config
     Type="Variable"
     Name="traefik.enable"
@@ -46,8 +44,7 @@
     Description="Set to true to enable this container in Traefik."
     Mask="false"
     Display="always"
-    Required="true">true
-  </Config>
+    Required="true">true</Config>
   <Config
     Type="Variable"
     Name="traefik.backend"
@@ -56,8 +53,7 @@
     Description="Overrides the container name by foo in the generated name of the backend."
     Mask="false"
     Display="always"
-    Required="true">traefik
-  </Config>
+    Required="true">traefik</Config>
   <Config
     Type="Variable"
     Name="traefik.frontend.rule"
@@ -66,8 +62,7 @@
     Description="Overrides the default frontend rule. Default: Host:{containerName}.{domain} if you are using docker-compose."
     Mask="false"
     Display="always"
-    Required="true">traefik.domain.com
-  </Config>
+    Required="true">traefik.domain.com</Config>
   <Config
     Type="Variable"
     Name="traefik.port"
@@ -76,8 +71,7 @@
     Description="Registers this port. Useful when the container exposes multiples ports."
     Mask="false"
     Display="always"
-    Required="true">8080
-  </Config>
+    Required="true">8080</Config>
   <Config
     Type="Variable"
     Name="traefik.docker.network"
@@ -86,8 +80,7 @@
     Description="Overrides the default docker network to use for connections to the container."
     Mask="false"
     Display="always"
-    Required="true">traefik_proxy
-  </Config>
+    Required="true">traefik_proxy</Config>
   <Config
     Type="Variable"
     Name="traefik.frontend.headers.SSLRedirect"
@@ -96,8 +89,7 @@
     Description="Forces the frontend to redirect to SSL if a non-SSL request is sent."
     Mask="false"
     Display="always"
-    Required="true">true
-  </Config>
+    Required="true">true</Config>
   <Config
     Type="Variable"
     Name="traefik.frontend.headers.STSSeconds"
@@ -106,8 +98,7 @@
     Description="Sets the max-age of the STS header."
     Mask="false"
     Display="always"
-    Required="true">315360000
-  </Config>
+    Required="true">315360000</Config>
   <Config
     Type="Variable"
     Name="traefik.frontend.headers.browserXSSFilter"
@@ -116,8 +107,7 @@
     Description="Adds the X-XSS-Protection header with the value 1; mode=block."
     Mask="false"
     Display="always"
-    Required="true">true
-  </Config>
+    Required="true">true</Config>
   <Config
     Type="Variable"
     Name="traefik.frontend.headers.contentTypeNosniff"
@@ -126,8 +116,7 @@
     Description="Adds the X-Content-Type-Options header with the value nosniff."
     Mask="false"
     Display="always"
-    Required="true">true
-  </Config>
+    Required="true">true</Config>
   <Config
     Type="Variable"
     Name="traefik.frontend.headers.forceSTSHeader"
@@ -136,8 +125,7 @@
     Description="Adds the STS header to non-SSL requests."
     Mask="false"
     Display="always"
-    Required="true">true
-  </Config>
+    Required="true">true</Config>
   <Config
     Type="Variable"
     Name="traefik.frontend.headers.SSLHost"
@@ -146,8 +134,7 @@
     Description="This setting configures the hostname that redirects will be based on. Default is NOTHING, which is the same host as the request."
     Mask="false"
     Display="always"
-    Required="true">domain.com
-  </Config>
+    Required="true">domain.com</Config>
   <Config
     Type="Variable"
     Name="traefik.frontend.headers.STSIncludeSubdomains"
@@ -156,8 +143,7 @@
     Description="Adds the IncludeSubdomains section of the STS header."
     Mask="false"
     Display="always"
-    Required="true">true
-  </Config>
+    Required="true">true</Config>
   <Config
     Type="Variable"
     Name="traefik.frontend.headers.STSPreload"
@@ -166,8 +152,7 @@
     Description="Adds the preload flag to the STS header."
     Mask="false"
     Display="always"
-    Required="true">true
-  </Config>
+    Required="true">true</Config>
   <Config
     Type="Variable"
     Name="traefik.frontend.headers.frameDeny"
@@ -176,8 +161,7 @@
     Description="Adds the X-Frame-Options header with the value of DENY."
     Mask="false"
     Display="always"
-    Required="true">true
-  </Config>
+    Required="true">true</Config>
   <Config
     Type="Port"
     Name="HTTP Port"
@@ -186,8 +170,7 @@
     Mode="tcp"
     Description="HTTP Port"
     Display="always"
-    Required="true">80
-  </Config>
+    Required="true">80</Config>
   <Config
     Type="Port"
     Name="HTTPS Port"
@@ -196,9 +179,8 @@
     Mode="tcp"
     Description="HTTPS Port"
     Display="always"
-    Required="true">443
-  </Config>
-   <Config
+    Required="true">443</Config>
+  <Config
     Type="Port"
     Name="WebUI Port"
     Target="8080"
@@ -206,6 +188,5 @@
     Mode="tcp"
     Description="WebUI Port"
     Display="always"
-    Required="true">8080
-  </Config>
+    Required="true">8080</Config>
 </Container>

@@ -56,7 +56,7 @@
     Display="advanced" 
     Required="true">100</Config>
   <Config 
-    Type="Variable" 
+    Type="Label" 
     Name="traefik.enable" 
     Target="traefik.enable" 
     Default="true" 
@@ -65,7 +65,7 @@
     Display="always-hide" 
     Required="true">true</Config>
   <Config 
-    Type="Variable" 
+    Type="Label" 
     Name="traefik.backend" 
     Target="traefik.backend" 
     Default="traefik" 
@@ -74,7 +74,7 @@
     Display="always-hide" 
     Required="true">traefik</Config>
   <Config 
-    Type="Variable" 
+    Type="Label" 
     Name="traefik.frontend.rule" 
     Target="traefik.frontend.rule" 
     Default="traefik.domain.com" 
@@ -83,7 +83,7 @@
     Display="always-hide" 
     Required="true">traefik.domain.com</Config>
   <Config 
-    Type="Variable" 
+    Type="Label" 
     Name="traefik.port" 
     Target="traefik.port" 
     Default="8080" 
@@ -92,7 +92,7 @@
     Display="always-hide" 
     Required="true">8080</Config>
   <Config 
-    Type="Variable" 
+    Type="Label" 
     Name="traefik.docker.network" 
     Target="traefik.docker.network" 
     Default="traefik_proxy" 
@@ -101,7 +101,7 @@
     Display="always-hide" 
     Required="true">traefik_proxy</Config>
   <Config 
-    Type="Variable" 
+    Type="Label" 
     Name="traefik.frontend.headers.SSLRedirect" 
     Target="traefik.frontend.headers.SSLRedirect" 
     Default="true" 
@@ -110,7 +110,7 @@
     Display="always-hide" 
     Required="true">true</Config>
   <Config 
-    Type="Variable" 
+    Type="Label" 
     Name="traefik.frontend.headers.STSSeconds" 
     Target="traefik.frontend.headers.STSSeconds" 
     Default="315360000" 
@@ -119,7 +119,7 @@
     Display="always-hide" 
     Required="true">315360000</Config>
   <Config 
-    Type="Variable" 
+    Type="Label" 
     Name="traefik.frontend.headers.browserXSSFilter" 
     Target="traefik.frontend.headers.browserXSSFilter" 
     Default="true" 
@@ -128,7 +128,7 @@
     Display="always-hide" 
     Required="true">true</Config>
   <Config 
-    Type="Variable" 
+    Type="Label" 
     Name="traefik.frontend.headers.contentTypeNosniff" 
     Target="traefik.frontend.headers.contentTypeNosniff" 
     Default="true" 
@@ -137,7 +137,7 @@
     Display="always-hide" 
     Required="true">true</Config>
   <Config 
-    Type="Variable" 
+    Type="Label" 
     Name="traefik.frontend.headers.forceSTSHeader" 
     Target="traefik.frontend.headers.forceSTSHeader" 
     Default="true" 
@@ -146,7 +146,7 @@
     Display="always-hide" 
     Required="true">true</Config>
   <Config 
-    Type="Variable" 
+    Type="Label" 
     Name="traefik.frontend.headers.SSLHost" 
     Target="traefik.frontend.headers.SSLHost" 
     Default="domain.com" 
@@ -155,7 +155,7 @@
     Display="always-hide" 
     Required="true">domain.com</Config>
   <Config 
-    Type="Variable" 
+    Type="Label" 
     Name="traefik.frontend.headers.STSIncludeSubdomains" 
     Target="traefik.frontend.headers.STSIncludeSubdomains" 
     Default="true" 
@@ -164,7 +164,7 @@
     Display="always-hide" 
     Required="true">true</Config>
   <Config 
-    Type="Variable" 
+    Type="Label" 
     Name="traefik.frontend.headers.STSPreload" 
     Target="traefik.frontend.headers.STSPreload" 
     Default="true" 
@@ -173,7 +173,7 @@
     Display="always-hide" 
     Required="true">true</Config>
   <Config 
-    Type="Variable" 
+    Type="Label" 
     Name="traefik.frontend.headers.frameDeny" 
     Target="traefik.frontend.headers.frameDeny" 
     Default="true" 

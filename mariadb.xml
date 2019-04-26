@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+  <Name>mariadb</Name>
+  <Overview>
+  MariaDB is a community-developed fork of the MySQL relational database management system.
+  </Overview>
+  <Registry>https://hub.docker.com/_/mariadb</Registry>
+  <Repository>mariadb:latest</Repository>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/psdl/docker-templates/issues</Support>
+  <Network>traefik_proxy</Network>
+  <Icon>https://raw.githubusercontent.com/psdl/docker-templates/images/mariadb.png</Icon>
+  <Category>Network:Other Other: Tools:</Category>
+  <Config
+    Type="Path"
+    Name="/config"
+    Target="/config"
+    Default="/mnt/user/appdata/mysql"
+    Mode="rw"
+    Description="mysql config directory."
+    Required="true">/mnt/user/appdata/mysql
+  </Config>
+  <Config
+    Type="Variable"
+    Name="MYSQL_ROOT_PASSWORD"
+    Target="MYSQL_ROOT_PASSWORD"
+    Default=""
+    Description="This variable is mandatory and specifies the password that will be set for the MariaDB root superuser account."
+    Mask="true"
+    Display="always"
+    Required="true">
+  </Config>
+  <Config
+    Type="Variable"
+    Name="MYSQL_DATABASE"
+    Target="MYSQL_DATABASE"
+    Default=""
+    Description="This variable is optional and allows you to specify the name of a database to be created on image startup. If a user or password was supplied then that user will be granted superuser access to this database."
+    Mask="false"
+    Display="always"
+    Required="true">
+  </Config>
+  <Config
+    Type="Variable"
+    Name="MYSQL_USER"
+    Target="MYSQL_USER"
+    Default=""
+    Description="This user will be granted superuser permissions for the database specified by the MYSQL_DATABASE variable."
+    Mask="false"
+    Display="always"
+    Required="true">
+  </Config>
+  <Config
+    Type="Variable"
+    Name="traefik.enable"
+    Target="traefik.enable"
+    Default="true"
+    Description="Set to true to enable this container in Traefik."
+    Mask="false"
+    Display="always"
+    Required="true">true
+  </Config>
+  <Config
+    Type="Variable"
+    Name="MYSQL_PASSWORD"
+    Target="MYSQL_PASSWORD"
+    Default=""
+    Description="This sets the password for the MYSQL_USER."
+    Mask="true"
+    Display="always"
+    Required="true">
+  </Config>
+  <Config
+    Type="Port"
+    Name="mysqld.sock port to expose"
+    Target="3306"
+    Default="3306"
+    Mode="tcp"
+    Description="HTTP Port"
+    Display="always"
+    Required="true">3306
+  </Config>
+</Container>

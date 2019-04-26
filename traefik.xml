@@ -188,7 +188,7 @@
     Default="80" 
     Mode="tcp" 
     Description="HTTP Port" 
-    Display="always" 
+    Display="advanced" 
     Required="true">80</Config>
   <Config 
     Type="Port" 
@@ -197,7 +197,7 @@
     Default="443" 
     Mode="tcp" 
     Description="HTTPS Port" 
-    Display="always" 
+    Display="advanced" 
     Required="true">443</Config>
   <Config 
     Type="Port" 
@@ -206,6 +206,6 @@
     Default="8080" 
     Mode="tcp" 
     Description="WebUI Port" 
-    Display="always" 
+    Display="advanced" 
     Required="true">8080</Config>
 </Container>

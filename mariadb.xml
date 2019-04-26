@@ -22,6 +22,24 @@
     Required="true">/mnt/user/appdata/mysql</Config>
   <Config 
     Type="Variable" 
+    Name="PUID" 
+    Target="PUID" 
+    Default="99" 
+    Description="User ID." 
+    Mask="true" 
+    Display="hide" 
+    Required="true">99</Config>
+  <Config 
+    Type="Variable" 
+    Name="GUID" 
+    Target="GUID" 
+    Default="100" 
+    Description="Group ID." 
+    Mask="true" 
+    Display="hide" 
+    Required="true">100</Config>
+  <Config 
+    Type="Variable" 
     Name="MYSQL_ROOT_PASSWORD" 
     Target="MYSQL_ROOT_PASSWORD" 
     Default="" 

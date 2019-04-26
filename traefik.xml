@@ -26,7 +26,7 @@
     Target="/etc/traefik"
     Default="/mnt/user/appdata/traefik"
     Mode="rw"
-    Description=""
+    Description="traefik config directory."
     Required="true">/mnt/user/appdata/traefik
   </Config>
   <Config

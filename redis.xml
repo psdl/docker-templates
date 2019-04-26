@@ -59,6 +59,6 @@
     Default="6379" 
     Mode="tcp" 
     Description="Redis Port to expose" 
-    Display="always" 
+    Display="advanced" 
     Required="true">6379</Config>
 </Container>

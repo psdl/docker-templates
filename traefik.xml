@@ -2,13 +2,13 @@
 <Container version="2">
   <Name>traefik</Name>
   <Overview>
-   Traefik is a modern HTTP reverse proxy and load balancer that makes deploying microservices easy.
+   Traefik is a modern HTTP reverse proxy and load balancer that makes deploying microservices easy.[br][br]
    
-   > docker network create traefik_proxy
+   > docker network create traefik_proxy[br][br[]
    
-   > cd /mnt/user/appdata/traefik
-   > touch acme.json
-   > chmod 0600 acme.json
+   > cd /mnt/user/appdata/traefik[br]
+   > touch acme.json[br]
+   > chmod 0600 acme.json[br][br]
    
    Please create your traefik.toml with your settings !
   </Overview>

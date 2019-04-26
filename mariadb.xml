@@ -52,16 +52,6 @@
   </Config>
   <Config
     Type="Variable"
-    Name="traefik.enable"
-    Target="traefik.enable"
-    Default="true"
-    Description="Set to true to enable this container in Traefik."
-    Mask="false"
-    Display="always"
-    Required="true">true
-  </Config>
-  <Config
-    Type="Variable"
     Name="MYSQL_PASSWORD"
     Target="MYSQL_PASSWORD"
     Default=""
@@ -69,6 +59,16 @@
     Mask="true"
     Display="always"
     Required="true">
+  </Config>
+  <Config
+    Type="Variable"
+    Name="traefik.enable"
+    Target="traefik.enable"
+    Default="true"
+    Description="Set to true to enable this container in Traefik."
+    Mask="false"
+    Display="always"
+    Required="true">true
   </Config>
   <Config
     Type="Port"

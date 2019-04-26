@@ -17,30 +17,30 @@
   <BindTime>true</BindTime>
   <Icon>https://raw.githubusercontent.com/psdl/docker-templates/images/redis.png</Icon>
   <Category>Network:Other Other: Tools:</Category>
-  <Config
-    Type="Path"
-    Name="/usr/local/etc/redis"
-    Target="/usr/local/etc/redis"
-    Default="/mnt/user/appdata/redis"
-    Mode="rw"
-    Description="redis config directory."
+  <Config 
+    Type="Path" 
+    Name="/usr/local/etc/redis" 
+    Target="/usr/local/etc/redis" 
+    Default="/mnt/user/appdata/redis" 
+    Mode="rw" 
+    Description="redis config directory." 
     Required="true">/mnt/user/appdata/redis</Config>
-  <Config
+  <Config 
     Type="Variable"
-    Name="traefik.enable"
-    Target="traefik.enable"
-    Default="false"
-    Description="Set to true to enable this container in Traefik."
-    Mask="false"
-    Display="always"
+    Name="traefik.enable" 
+    Target="traefik.enable" 
+    Default="false" 
+    Description="Set to true to enable this container in Traefik." 
+    Mask="false" 
+    Display="always" 
     Required="true">false</Config>
-  <Config
-    Type="Port"
-    Name="mysqld.sock port to expose"
-    Target="6379"
-    Default="6379"
-    Mode="tcp"
-    Description="redis Port"
-    Display="always"
+  <Config 
+    Type="Port" 
+    Name="Redis port" 
+    Target="6379" 
+    Default="6379" 
+    Mode="tcp" 
+    Description="Redis Port to expose" 
+    Display="always" 
     Required="true">6379</Config>
 </Container>

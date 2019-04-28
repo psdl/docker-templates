@@ -14,8 +14,8 @@
   <Category>Network:Other Other: Tools:</Category>
   <Config 
     Type="Path" 
-    Name="/config" 
-    Target="/config" 
+    Name="/var/lib/mysql" 
+    Target="/var/lib/mysql" 
     Default="/mnt/user/appdata/mysql" 
     Mode="rw" 
     Description="mysql config directory." 

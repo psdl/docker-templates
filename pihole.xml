@@ -2,12 +2,11 @@
 <Container version="2">
   <Name>pihole</Name>
   <Overview>
-  MariaDB is a community-developed fork of the MySQL relational database management system.
+  Pi-hole - Network-wide Ad Blocking.
   </Overview>
   <Registry>https://hub.docker.com/r/pihole/pihole</Registry>
   <Repository>pihole/pihole:latest</Repository>
   <Privileged>false</Privileged>
-  <BindTime>true</BindTime>
   <BindTime>true</BindTime>
   <WebUI>http://[IP]:[PORT:9080]/</WebUI>
   <Support>https://github.com/psdl/docker-templates/issues</Support>
@@ -20,7 +19,7 @@
     Target="/etc/pihole" 
     Default="/mnt/user/appdata/pihole/etc" 
     Mode="rw" 
-    Description="mysql config directory." 
+    Description="Pi-hole config directory." 
     Required="true">/mnt/user/appdata/pihole/etc</Config>
   <Config 
     Type="Path" 
@@ -28,7 +27,7 @@
     Target="/etc/dnsmasq.d" 
     Default="/mnt/user/appdata/pihole/dnsmasq.d" 
     Mode="rw" 
-    Description="mysql config directory." 
+    Description="Pi-hole dnsmasq.d directory." 
     Required="true">/mnt/user/appdata/pihole/etc</Config>
   <Config 
     Type="Variable" 
@@ -88,11 +87,11 @@
     Type="Label" 
     Name="traefik.enable" 
     Target="traefik.enable" 
-    Default="false" 
+    Default="true" 
     Description="Set to true to enable this container in Traefik." 
     Mask="false" 
     Display="always-hide" 
-    Required="true">false</Config>
+    Required="true">true</Config>
   <Config 
     Type="Port" 
     Name="DNS TCP port to expose" 

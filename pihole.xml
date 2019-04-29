@@ -38,6 +38,51 @@
     Display="always" 
     Required="true">Europe/Berlin</Config>
   <Config 
+    Type="Variable" 
+    Name="WEBPASSWORD" 
+    Target="WEBPASSWORD" 
+    Default="" 
+    Description="Password for the Pi-hole frontend." 
+    Mask="false" 
+    Display="always-hide" 
+    Required="true"></Config>
+  <Config 
+    Type="Variable" 
+    Name="ServerIP" 
+    Target="ServerIP" 
+    Default="x.x.x.x" 
+    Description="Set to your server's LAN IP, used by web block modes and lighttpd bind address." 
+    Mask="false" 
+    Display="always" 
+    Required="true">x.x.x.x</Config>
+  <Config 
+    Type="Variable" 
+    Name="IPv6" 
+    Target="IPv6" 
+    Default="false" 
+    Description="For unraid compatibility, strips out all the IPv6 configuration from DNS/Web services when false." 
+    Mask="false" 
+    Display="advanced" 
+    Required="true">false</Config>
+  <Config 
+    Type="Label" 
+    Name="DNS1" 
+    Target="DNS" 
+    Default="127.0.0.1" 
+    Description="Sets your container's resolve settings to localhost so it can resolve DHCP hostnames from Pi-hole's DNSMasq, also fixes common resolution errors on container restart. MUST BE 127.0.0.1 !" 
+    Mask="false" 
+    Display="always" 
+    Required="true">127.0.0.1</Config>
+  <Config 
+    Type="Label" 
+    Name="DNS2" 
+    Target="DNS" 
+    Default="1.1.1.1" 
+    Description="Sets a backup server of your choosing in case DNSMasq has problems starting." 
+    Mask="false" 
+    Display="always" 
+    Required="true">1.1.1.1</Config>
+  <Config 
     Type="Label" 
     Name="traefik.enable" 
     Target="traefik.enable" 

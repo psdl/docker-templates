@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+  <Name>pihole</Name>
+  <Overview>
+  MariaDB is a community-developed fork of the MySQL relational database management system.
+  </Overview>
+  <Registry>https://hub.docker.com/r/pihole/pihole</Registry>
+  <Repository>pihole/pihole:latest</Repository>
+  <Privileged>false</Privileged>
+  <BindTime>true</BindTime>
+  <Support>https://github.com/psdl/docker-templates/issues</Support>
+  <Network>bridge</Network>
+  <Icon>https://raw.githubusercontent.com/psdl/docker-templates/images/pihole.png</Icon>
+  <Category>Network:Other Other: Tools:</Category>
+  <Config 
+    Type="Path" 
+    Name="/etc/pihole" 
+    Target="/etc/pihole" 
+    Default="/mnt/user/appdata/pihole/etc" 
+    Mode="rw" 
+    Description="mysql config directory." 
+    Required="true">/mnt/user/appdata/pihole/etc</Config>
+  <Config 
+    Type="Path" 
+    Name="/etc/dnsmasq.d" 
+    Target="/etc/dnsmasq.d" 
+    Default="/mnt/user/appdata/pihole/dnsmasq.d" 
+    Mode="rw" 
+    Description="mysql config directory." 
+    Required="true">/mnt/user/appdata/pihole/etc</Config>
+  <Config 
+    Type="Variable" 
+    Name="TZ" 
+    Target="TZ" 
+    Default="Europe/Berlin" 
+    Description="Timezone" 
+    Mask="false" 
+    Display="always" 
+    Required="true">Europe/Berlin</Config>
+  <Config 
+    Type="Label" 
+    Name="traefik.enable" 
+    Target="traefik.enable" 
+    Default="false" 
+    Description="Set to true to enable this container in Traefik." 
+    Mask="false" 
+    Display="always-hide" 
+    Required="true">false</Config>
+  <Config 
+    Type="Port" 
+    Name="DNS TCP port to expose" 
+    Target="53" 
+    Default="53" 
+    Mode="tcp" 
+    Description="DNS port to expose" 
+    Display="always" 
+    Required="true">53</Config>
+  <Config 
+    Type="Port" 
+    Name="DNS UDP port to expose" 
+    Target="53" 
+    Default="53" 
+    Mode="udp" 
+    Description="DNS UDP port to expose" 
+    Display="always" 
+    Required="true">53</Config>
+  <Config 
+    Type="Port" 
+    Name="HTTP port to expose" 
+    Target="80" 
+    Default="9080" 
+    Mode="tcp" 
+    Description="HTTP port to expose" 
+    Display="always" 
+    Required="true">9080</Config>
+  <Config 
+    Type="Port" 
+    Name="HTTPS port to expose" 
+    Target="443" 
+    Default="9443" 
+    Mode="tcp" 
+    Description="HTTPS port to expose" 
+    Display="always" 
+    Required="true">9443</Config>
+</Container>

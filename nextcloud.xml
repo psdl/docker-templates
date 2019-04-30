@@ -55,7 +55,7 @@
     Default="true" 
     Description="Set to true to enable this container in Traefik." 
     Mask="false" 
-    Display="always-hide" 
+    Display="always" 
     Required="true">true</Config>
   <Config 
     Type="Label" 
@@ -64,7 +64,7 @@
     Default="nextcloud" 
     Description="Overrides the container name by foo in the generated name of the backend." 
     Mask="false" 
-    Display="always-hide" 
+    Display="always" 
     Required="true">nextcloud</Config>
   <Config 
     Type="Label" 
@@ -73,7 +73,7 @@
     Default="Host:nextcloud.domain.com" 
     Description="Overrides the default frontend rule. Default: Host:{containerName}.{domain} if you are using docker-compose." 
     Mask="false" 
-    Display="always-hide" 
+    Display="always" 
     Required="true">Host:nextcloud.domain.com</Config>
   <Config 
     Type="Label" 
@@ -82,7 +82,7 @@
     Default="80" 
     Description="Registers this port. Useful when the container exposes multiples ports." 
     Mask="false" 
-    Display="always-hide" 
+    Display="always" 
     Required="true">80</Config>
   <Config 
     Type="Label" 
@@ -91,7 +91,7 @@
     Default="traefik_proxy" 
     Description="Overrides the default docker network to use for connections to the container." 
     Mask="false" 
-    Display="always-hide" 
+    Display="always" 
     Required="true">traefik_proxy</Config>
   <Config 
     Type="Label" 
@@ -100,7 +100,7 @@
     Default="true" 
     Description="Forces the frontend to redirect to SSL if a non-SSL request is sent." 
     Mask="false" 
-    Display="always-hide" 
+    Display="always" 
     Required="true">true</Config>
   <Config 
     Type="Label" 
@@ -109,7 +109,7 @@
     Default="315360000" 
     Description="Sets the max-age of the STS header." 
     Mask="false" 
-    Display="always-hide" 
+    Display="always" 
     Required="true">315360000</Config>
   <Config 
     Type="Label" 
@@ -118,7 +118,7 @@
     Default="true" 
     Description="Adds the X-XSS-Protection header with the value 1; mode=block." 
     Mask="false" 
-    Display="always-hide" 
+    Display="always" 
     Required="true">true</Config>
   <Config 
     Type="Label" 
@@ -127,7 +127,7 @@
     Default="true" 
     Description="Adds the X-Content-Type-Options header with the value nosniff." 
     Mask="false" 
-    Display="always-hide" 
+    Display="always" 
     Required="true">true</Config>
   <Config 
     Type="Label" 
@@ -136,7 +136,7 @@
     Default="true" 
     Description="Adds the STS header to non-SSL requests." 
     Mask="false" 
-    Display="always-hide" 
+    Display="always" 
     Required="true">true</Config>
   <Config 
     Type="Label" 
@@ -145,7 +145,7 @@
     Default="domain.com" 
     Description="This setting configures the hostname that redirects will be based on. Default is NOTHING, which is the same host as the request." 
     Mask="false" 
-    Display="always-hide" 
+    Display="always" 
     Required="true">domain.com</Config>
   <Config 
     Type="Label" 
@@ -154,7 +154,7 @@
     Default="true" 
     Description="Adds the IncludeSubdomains section of the STS header." 
     Mask="false" 
-    Display="always-hide" 
+    Display="always" 
     Required="true">true</Config>
   <Config 
     Type="Label" 
@@ -163,7 +163,7 @@
     Default="true" 
     Description="Adds the preload flag to the STS header." 
     Mask="false" 
-    Display="always-hide" 
+    Display="always" 
     Required="true">true</Config>
   <Config 
     Type="Label" 
@@ -172,8 +172,35 @@
     Default="SAMEORIGIN" 
     Description="Overrides the X-Frame-Options header with the custom value." 
     Mask="false" 
-    Display="always-hide" 
+    Display="always" 
     Required="true">SAMEORIGIN</Config>
+  <Config 
+    Type="Label" 
+    Name="traefik.frontend.redirect.permanent" 
+    Target="traefik.frontend.redirect.permanent" 
+    Default="true" 
+    Description="Fix well-known/caldav and well-known/carddav." 
+    Mask="false" 
+    Display="always" 
+    Required="true">true</Config>
+  <Config 
+    Type="Label" 
+    Name="traefik.frontend.redirect.regex" 
+    Target="traefik.frontend.redirect.regex" 
+    Default="https://(.*)/.well-known/(card|cal)dav" 
+    Description="Fix well-known/caldav and well-known/carddav." 
+    Mask="false" 
+    Display="always" 
+    Required="true">https://(.*)/.well-known/(card|cal)dav</Config>
+  <Config 
+    Type="Label" 
+    Name="traefik.frontend.redirect.replacement" 
+    Target="traefik.frontend.redirect.replacement" 
+    Default="https://$$1/remote.php/dav/" 
+    Description="Fix well-known/caldav and well-known/carddav." 
+    Mask="false" 
+    Display="always" 
+    Required="true">https://$$1/remote.php/dav/</Config>
   <Config 
     Type="Port" 
     Name="HTTP Port" 

@@ -78,11 +78,11 @@
     Type="Label" 
     Name="traefik.enable" 
     Target="traefik.enable" 
-    Default="true" 
+    Default="false" 
     Description="Set to true to enable this container in Traefik." 
     Mask="false" 
-    Display="always-hide" 
-    Required="true">true</Config>
+    Display="always" 
+    Required="true">false</Config>
   <Config 
     Type="Port" 
     Name="DNS TCP port to expose" 
@@ -105,9 +105,18 @@
     Type="Port" 
     Name="HTTP port to expose" 
     Target="80" 
-    Default="9080" 
+    Default="80" 
     Mode="tcp" 
     Description="HTTP port to expose" 
     Display="always" 
-    Required="true">9080</Config>
+    Required="true">80</Config>
+  <Config 
+    Type="Port" 
+    Name="HTTPS port to expose" 
+    Target="443" 
+    Default="443" 
+    Mode="tcp" 
+    Description="HTTP port to expose" 
+    Display="always" 
+    Required="true">443</Config>
 </Container>

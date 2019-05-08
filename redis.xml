@@ -44,8 +44,8 @@
     Display="advanced" 
     Required="true">100</Config>
   <Config 
-    Type="Variable" 
-    Name="sysctl" 
+    Type="sysctl" 
+    Name="net.core.somaxconn" 
     Target="net.core.somaxconn" 
     Default="511" 
     Description="net.core.somaxconn" 
@@ -53,8 +53,8 @@
     Display="advanced" 
     Required="true">511</Config>
   <Config 
-    Type="Variable" 
-    Name="sysctl" 
+    Type="sysctl" 
+    Name="vm.nr_hugepages" 
     Target="vm.nr_hugepages" 
     Default="0" 
     Description="vm.nr_hugepages" 

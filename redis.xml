@@ -44,24 +44,6 @@
     Display="advanced" 
     Required="true">100</Config>
   <Config 
-    Type="sysctl" 
-    Name="net.core.somaxconn" 
-    Target="net.core.somaxconn" 
-    Default="511" 
-    Description="net.core.somaxconn" 
-    Mask="false" 
-    Display="advanced" 
-    Required="true">511</Config>
-  <Config 
-    Type="sysctl" 
-    Name="vm.nr_hugepages" 
-    Target="vm.nr_hugepages" 
-    Default="0" 
-    Description="vm.nr_hugepages" 
-    Mask="false" 
-    Display="advanced" 
-    Required="true">0</Config>
-  <Config 
     Type="Label"
     Name="traefik.enable" 
     Target="traefik.enable" 

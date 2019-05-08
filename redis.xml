@@ -2,12 +2,12 @@
 <Container version="2">
   <Name>redis</Name>
   <Overview>
-Redis
-Redis is an open-source, networked, in-memory, key-value data store with optional durability.
+Redis[br]
+Redis is an open-source, networked, in-memory, key-value data store with optional durability.[br][br]
   
-If you plan to use Redis just as a cache where every key will have an expire set, you may consider using the following configuration instead:
+If you plan to use Redis just as a cache where every key will have an expire set, you may consider using the following configuration instead:[br][br]
 
-> redis-cli > maxmemory 2mb
+> redis-cli > maxmemory 2mb[br]
 > redis-cli > maxmemory-policy allkeys-lru
   </Overview>
   <Registry>https://hub.docker.com/_/redis</Registry>

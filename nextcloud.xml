@@ -32,12 +32,12 @@
     Required="true">/mnt/user/appdata/nextcloud/data</Config>
   <Config 
     Type="Path" 
-    Name="/var/www/html/custom_apps" 
-    Target="/var/www/html/custom_apps" 
-    Default="/mnt/user/appdata/nextcloud/custom_apps" 
+    Name="/var/www/html/apps" 
+    Target="/var/www/html/apps" 
+    Default="/mnt/user/appdata/nextcloud/apps" 
     Mode="rw" 
     Description="Application directory." 
-    Required="true">/mnt/user/appdata/nextcloud/custom_apps</Config>
+    Required="true">/mnt/user/appdata/nextcloud/apps</Config>
   <Config 
     Type="Variable" 
     Name="PUID" 

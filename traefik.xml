@@ -57,24 +57,6 @@
     Required="true">100</Config>
   <Config 
     Type="Label" 
-    Name="traefik.enable" 
-    Target="traefik.enable" 
-    Default="true" 
-    Description="Set to true to enable this container in Traefik." 
-    Mask="false" 
-    Display="always-hide" 
-    Required="true">true</Config>
-  <Config 
-    Type="Label" 
-    Name="traefik.backend" 
-    Target="traefik.backend" 
-    Default="traefik" 
-    Description="Overrides the container name by foo in the generated name of the backend." 
-    Mask="false" 
-    Display="always-hide" 
-    Required="true">traefik</Config>
-  <Config 
-    Type="Label" 
     Name="traefik.frontend.rule" 
     Target="traefik.frontend.rule" 
     Default="Host:traefik.domain.com" 
@@ -91,96 +73,6 @@
     Mask="false" 
     Display="always-hide" 
     Required="true">8080</Config>
-  <Config 
-    Type="Label" 
-    Name="traefik.docker.network" 
-    Target="traefik.docker.network" 
-    Default="traefik_proxy" 
-    Description="Overrides the default docker network to use for connections to the container." 
-    Mask="false" 
-    Display="always-hide" 
-    Required="true">traefik_proxy</Config>
-  <Config 
-    Type="Label" 
-    Name="traefik.frontend.headers.SSLRedirect" 
-    Target="traefik.frontend.headers.SSLRedirect" 
-    Default="true" 
-    Description="Forces the frontend to redirect to SSL if a non-SSL request is sent." 
-    Mask="false" 
-    Display="always-hide" 
-    Required="true">true</Config>
-  <Config 
-    Type="Label" 
-    Name="traefik.frontend.headers.STSSeconds" 
-    Target="traefik.frontend.headers.STSSeconds" 
-    Default="315360000" 
-    Description="Sets the max-age of the STS header." 
-    Mask="false" 
-    Display="always-hide" 
-    Required="true">315360000</Config>
-  <Config 
-    Type="Label" 
-    Name="traefik.frontend.headers.browserXSSFilter" 
-    Target="traefik.frontend.headers.browserXSSFilter" 
-    Default="true" 
-    Description="Adds the X-XSS-Protection header with the value 1; mode=block." 
-    Mask="false" 
-    Display="always-hide" 
-    Required="true">true</Config>
-  <Config 
-    Type="Label" 
-    Name="traefik.frontend.headers.contentTypeNosniff" 
-    Target="traefik.frontend.headers.contentTypeNosniff" 
-    Default="true" 
-    Description="Adds the X-Content-Type-Options header with the value nosniff." 
-    Mask="false" 
-    Display="always-hide" 
-    Required="true">true</Config>
-  <Config 
-    Type="Label" 
-    Name="traefik.frontend.headers.forceSTSHeader" 
-    Target="traefik.frontend.headers.forceSTSHeader" 
-    Default="true" 
-    Description="Adds the STS header to non-SSL requests." 
-    Mask="false" 
-    Display="always-hide" 
-    Required="true">true</Config>
-  <Config 
-    Type="Label" 
-    Name="traefik.frontend.headers.SSLHost" 
-    Target="traefik.frontend.headers.SSLHost" 
-    Default="domain.com" 
-    Description="This setting configures the hostname that redirects will be based on. Default is NOTHING, which is the same host as the request." 
-    Mask="false" 
-    Display="always-hide" 
-    Required="true">domain.com</Config>
-  <Config 
-    Type="Label" 
-    Name="traefik.frontend.headers.STSIncludeSubdomains" 
-    Target="traefik.frontend.headers.STSIncludeSubdomains" 
-    Default="true" 
-    Description="Adds the IncludeSubdomains section of the STS header." 
-    Mask="false" 
-    Display="always-hide" 
-    Required="true">true</Config>
-  <Config 
-    Type="Label" 
-    Name="traefik.frontend.headers.STSPreload" 
-    Target="traefik.frontend.headers.STSPreload" 
-    Default="true" 
-    Description="Adds the preload flag to the STS header." 
-    Mask="false" 
-    Display="always-hide" 
-    Required="true">true</Config>
-  <Config 
-    Type="Label" 
-    Name="traefik.frontend.headers.frameDeny" 
-    Target="traefik.frontend.headers.frameDeny" 
-    Default="true" 
-    Description="Adds the X-Frame-Options header with the value of DENY." 
-    Mask="false" 
-    Display="always-hide" 
-    Required="true">true</Config>
   <Config 
     Type="Port" 
     Name="HTTP Port" 

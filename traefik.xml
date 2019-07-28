@@ -57,6 +57,24 @@
     Required="true">100</Config>
   <Config 
     Type="Label" 
+    Name="traefik.enable" 
+    Target="traefik.enable" 
+    Default="true" 
+    Description="Set to true to enable this container in Traefik." 
+    Mask="false" 
+    Display="always-hide" 
+    Required="true">true</Config>
+  <Config 
+    Type="Label" 
+    Name="traefik.backend" 
+    Target="traefik.backend" 
+    Default="traefik" 
+    Description="Overrides the container name by foo in the generated name of the backend." 
+    Mask="false" 
+    Display="always-hide" 
+    Required="true">traefik</Config>
+  <Config 
+    Type="Label" 
     Name="traefik.frontend.rule" 
     Target="traefik.frontend.rule" 
     Default="Host:traefik.domain.com" 

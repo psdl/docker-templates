@@ -209,4 +209,13 @@
     Mask="false" 
     Display="always" 
     Required="true">https://$$1/remote.php/dav/</Config>
+<Config 
+    Type="Port" 
+    Name="HTTP Port" 
+    Target="80" 
+    Default="7080" 
+    Mode="tcp" 
+    Description="HTTP Port" 
+    Display="always" 
+    Required="true">7080</Config>
 </Container>

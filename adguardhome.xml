@@ -2,7 +2,7 @@
 <Container version="2">
   <Name>Adguard Home</Name>
   <Overview>
-  Free and open source, powerful network-wide ads & trackers blocking DNS server.
+  Free and open source, powerful network-wide ads and trackers blocking DNS server.
   </Overview>
   <Registry>https://hub.docker.com/r/adguard/adguardhome</Registry>
   <Repository>adguard/adguardhome:latest</Repository>

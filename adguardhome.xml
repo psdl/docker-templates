@@ -76,6 +76,24 @@
     Required="true">traefik_proxy</Config>
   <Config 
     Type="Port" 
+    Name="HTTP port to expose" 
+    Target="80" 
+    Default="80" 
+    Mode="tcp" 
+    Description="HTTP port to expose" 
+    Display="always" 
+    Required="true">80</Config>
+  <Config 
+    Type="Port" 
+    Name="HTTPS port to expose" 
+    Target="443" 
+    Default="443" 
+    Mode="tcp" 
+    Description="HTTPS port to expose" 
+    Display="always" 
+    Required="true">443</Config>
+  <Config 
+    Type="Port" 
     Name="DNS port to expose (tcp)" 
     Target="53" 
     Default="53" 
@@ -92,33 +110,6 @@
     Description="DNS port to expose (udp)" 
     Display="always" 
     Required="true">53</Config>
-  <Config 
-    Type="Port" 
-    Name="DHCP client port to expose (tcp)" 
-    Target="68" 
-    Default="68" 
-    Mode="tcp" 
-    Description="DHCP client port to expose (tcp)" 
-    Display="always" 
-    Required="true">68</Config>
-  <Config 
-    Type="Port" 
-    Name="DHCP client port to expose (udp)" 
-    Target="68" 
-    Default="68" 
-    Mode="udp" 
-    Description="DHCP client port to expose (udp)" 
-    Display="always" 
-    Required="true">68</Config>
-  <Config 
-    Type="Port" 
-    Name="DHCP server or relay-agent port to expose (tcp)" 
-    Target="67" 
-    Default="67" 
-    Mode="tcp" 
-    Description="DHCP server or relay-agent port to expose (tcp)" 
-    Display="always" 
-    Required="true">67</Config>
   <Config 
     Type="Port" 
     Name="DNS over TLS port to expose" 

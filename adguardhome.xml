@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+  <Name>Adguard Home</Name>
+  <Overview>
+  Free and open source, powerful network-wide ads & trackers blocking DNS server.
+  </Overview>
+  <Registry>https://hub.docker.com/r/adguard/adguardhome</Registry>
+  <Repository>adguard/adguardhome:latest</Repository>
+  <Privileged>false</Privileged>
+  <BindTime>true</BindTime>
+  <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+  <Support>https://github.com/psdl/docker-templates/issues</Support>
+  <Network>bridge</Network>
+  <Icon>https://raw.githubusercontent.com/psdl/docker-templates/images/adguard.png</Icon>
+  <Category>Network:Other Other: Tools:</Category>
+  <Config 
+    Type="Path" 
+    Name="/opt/adguardhome/work" 
+    Target="/opt/adguardhome/work" 
+    Default="/mnt/user/appdata/adguardhome/work" 
+    Mode="rw" 
+    Description="Adguard Home work directory." 
+    Required="true">/mnt/user/appdata/adguardhome/work</Config>
+  <Config 
+    Type="Path" 
+    Name="/opt/adguardhome/conf" 
+    Target="/opt/adguardhome/conf" 
+    Default="/mnt/user/appdata/adguardhome/conf" 
+    Mode="rw" 
+    Description="Adguard Home config directory." 
+    Required="true">/mnt/user/appdata/adguardhome/conf</Config>
+  <Config 
+    Type="Label" 
+    Name="traefik.enable" 
+    Target="traefik.enable" 
+    Default="false" 
+    Description="Set to true to enable this container in Traefik." 
+    Mask="false" 
+    Display="always" 
+    Required="true">false</Config>
+  <Config 
+    Type="Port" 
+    Name="DNS port to expose (tcp)" 
+    Target="53" 
+    Default="53" 
+    Mode="tcp" 
+    Description="DNS port to expose (tcp)" 
+    Display="always" 
+    Required="true">53</Config>
+  <Config 
+    Type="Port" 
+    Name="DNS port to expose (udp)" 
+    Target="53" 
+    Default="53" 
+    Mode="udp" 
+    Description="DNS port to expose (udp)" 
+    Display="always" 
+    Required="true">53</Config>
+  <Config 
+    Type="Port" 
+    Name="DHCP client port to expose (tcp)" 
+    Target="68" 
+    Default="68" 
+    Mode="tcp" 
+    Description="DHCP client port to expose (tcp)" 
+    Display="always" 
+    Required="true">68</Config>
+  <Config 
+    Type="Port" 
+    Name="DHCP client port to expose (udp)" 
+    Target="68" 
+    Default="68" 
+    Mode="udp" 
+    Description="DHCP client port to expose (udp)" 
+    Display="always" 
+    Required="true">68</Config>
+  <Config 
+    Type="Port" 
+    Name="DHCP server or relay-agent port to expose (tcp)" 
+    Target="67" 
+    Default="67" 
+    Mode="tcp" 
+    Description="DHCP server or relay-agent port to expose (tcp)" 
+    Display="always" 
+    Required="true">67</Config>
+  <Config 
+    Type="Port" 
+    Name="HTTP port to expose" 
+    Target="80" 
+    Default="80" 
+    Mode="tcp" 
+    Description="HTTP port to expose" 
+    Display="always" 
+    Required="true">80</Config>
+  <Config 
+    Type="Port" 
+    Name="HTTPS port to expose" 
+    Target="443" 
+    Default="443" 
+    Mode="tcp" 
+    Description="HTTP port to expose" 
+    Display="always" 
+    Required="true">443</Config>
+  <Config 
+    Type="Port" 
+    Name="DNS over TLS port to expose" 
+    Target="853" 
+    Default="853" 
+    Mode="tcp" 
+    Description="DNS over TLS port to expose" 
+    Display="always" 
+    Required="true">853</Config>
+  <Config 
+    Type="Port" 
+    Name="WebUI port to expose" 
+    Target="3000" 
+    Default="3000" 
+    Mode="tcp" 
+    Description="WebUI port to expose" 
+    Display="always" 
+    Required="true">3000</Config>
+</Container>

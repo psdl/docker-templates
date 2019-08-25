@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+  <Name>Adguard Home</Name>
+  <Overview>
+  Free and open source, powerful network-wide ads and trackers blocking DNS server.
+  </Overview>
+  <Registry>https://hub.docker.com/r/adguard/adguardhome</Registry>
+  <Repository>adguard/adguardhome:latest</Repository>
+  <Privileged>false</Privileged>
+  <BindTime>true</BindTime>
+  <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+  <Support>https://github.com/psdl/docker-templates/issues</Support>
+  <Network>traefik_proxy</Network>
+  <Icon>https://raw.githubusercontent.com/psdl/docker-templates/images/adguard.png</Icon>
+  <Category>Network:Other Other: Tools:</Category>
+  <Config 
+    Type="Path" 
+    Name="/opt/adguardhome/work" 
+    Target="/opt/adguardhome/work" 
+    Default="/mnt/user/appdata/adguardhome/work" 
+    Mode="rw" 
+    Description="Adguard Home work directory." 
+    Required="true">/mnt/user/appdata/adguardhome/work</Config>
+  <Config 
+    Type="Path" 
+    Name="/opt/adguardhome/conf" 
+    Target="/opt/adguardhome/conf" 
+    Default="/mnt/user/appdata/adguardhome/conf" 
+    Mode="rw" 
+    Description="Adguard Home config directory." 
+    Required="true">/mnt/user/appdata/adguardhome/conf</Config>
+  <Config 
+    Type="Label" 
+    Name="traefik.enable" 
+    Target="traefik.enable" 
+    Default="false" 
+    Description="Set to true to enable this container in Traefik." 
+    Mask="false" 
+    Display="always" 
+    Required="true">true</Config>
+<Config 
+    Type="Label" 
+    Name="traefik.backend" 
+    Target="traefik.backend" 
+    Default="adguardhome" 
+    Description="Overrides the container name by foo in the generated name of the backend." 
+    Mask="false" 
+    Display="always" 
+    Required="true">adguardhome</Config>
+  <Config 
+    Type="Label" 
+    Name="traefik.frontend.rule" 
+    Target="traefik.frontend.rule" 
+    Default="Host:adguard.domain.com" 
+    Description="Overrides the default frontend rule. Default: Host:{containerName}.{domain} if you are using docker-compose." 
+    Mask="false" 
+    Display="always" 
+    Required="true">Host:adguard.domain.com</Config>
+  <Config 
+    Type="Label" 
+    Name="traefik.port" 
+    Target="traefik.port" 
+    Default="3000" 
+    Description="Registers this port. Useful when the container exposes multiples ports." 
+    Mask="false" 
+    Display="always" 
+    Required="true">3000</Config>
+  <Config 
+    Type="Label" 
+    Name="traefik.docker.network" 
+    Target="traefik.docker.network" 
+    Default="traefik_proxy" 
+    Description="Overrides the default docker network to use for connections to the container." 
+    Mask="false" 
+    Display="always" 
+    Required="true">traefik_proxy</Config>
+  <Config 
+    Type="Port" 
+    Name="DNS port to expose (tcp)" 
+    Target="53" 
+    Default="53" 
+    Mode="tcp" 
+    Description="DNS port to expose (tcp)" 
+    Display="always" 
+    Required="true">53</Config>
+  <Config 
+    Type="Port" 
+    Name="DNS port to expose (udp)" 
+    Target="53" 
+    Default="53" 
+    Mode="udp" 
+    Description="DNS port to expose (udp)" 
+    Display="always" 
+    Required="true">53</Config>
+  <Config 
+    Type="Port" 
+    Name="DHCP client port to expose (tcp)" 
+    Target="68" 
+    Default="68" 
+    Mode="tcp" 
+    Description="DHCP client port to expose (tcp)" 
+    Display="always" 
+    Required="true">68</Config>
+  <Config 
+    Type="Port" 
+    Name="DHCP client port to expose (udp)" 
+    Target="68" 
+    Default="68" 
+    Mode="udp" 
+    Description="DHCP client port to expose (udp)" 
+    Display="always" 
+    Required="true">68</Config>
+  <Config 
+    Type="Port" 
+    Name="DHCP server or relay-agent port to expose (tcp)" 
+    Target="67" 
+    Default="67" 
+    Mode="tcp" 
+    Description="DHCP server or relay-agent port to expose (tcp)" 
+    Display="always" 
+    Required="true">67</Config>
+  <Config 
+    Type="Port" 
+    Name="DNS over TLS port to expose" 
+    Target="853" 
+    Default="853" 
+    Mode="tcp" 
+    Description="DNS over TLS port to expose" 
+    Display="always" 
+    Required="true">853</Config>
+  <Config 
+    Type="Port" 
+    Name="WebUI port to expose" 
+    Target="3000" 
+    Default="3000" 
+    Mode="tcp" 
+    Description="WebUI port to expose" 
+    Display="always" 
+    Required="true">3000</Config>
+</Container>

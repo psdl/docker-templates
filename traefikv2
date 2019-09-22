@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+  <Name>traefikv2</Name>
+  <Overview>
+   Traefik is a modern HTTP reverse proxy and load balancer that makes deploying microservices easy.[br][br]
+   
+   > docker network create traefik_proxy[br][br[]
+   
+   > cd /mnt/user/appdata/traefikv2[br]
+   > touch acme.json[br]
+   > chmod 0600 acme.json[br][br]
+   
+   Please create your traefik.tml with your settings !
+  </Overview>
+  <Registry>https://hub.docker.com/_/traefik</Registry>
+  <Repository>traefik:latest</Repository>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/psdl/docker-templates/issues</Support>
+  <Network>traefik_proxy</Network>
+  <BindTime>true</BindTime>
+  <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+  <Icon>https://raw.githubusercontent.com/psdl/docker-templates/images/traefik.png</Icon>
+  <Category>Network:Web Network:Proxy</Category>
+  <Config 
+    Type="Path" 
+    Name="/etc/traefik" 
+    Target="/etc/traefik" 
+    Default="/mnt/user/appdata/traefikv2" 
+    Mode="rw" 
+    Description="traefik config directory." 
+    Required="true">/mnt/user/appdata/traefikv2</Config>
+  <Config 
+    Type="Path" 
+    Name="/var/run/docker.sock" 
+    Target="/var/run/docker.sock" 
+    Default="/var/run/docker.sock" 
+    Mode="ro" 
+    Description="Docker server endpoint. Can be a tcp or a unix socket endpoint." 
+    Required="true">/var/run/docker.sock</Config>
+  <Config 
+    Type="Variable" 
+    Name="PUID" 
+    Target="PUID" 
+    Default="99" 
+    Description="User ID." 
+    Mask="false" 
+    Display="advanced" 
+    Required="true">99</Config>
+  <Config 
+    Type="Variable" 
+    Name="GUID" 
+    Target="GUID" 
+    Default="100" 
+    Description="Group ID." 
+    Mask="false" 
+    Display="advanced" 
+    Required="true">100</Config>
+  <Config 
+    Type="Label" 
+    Name="traefik.enable" 
+    Target="traefik.enable" 
+    Default="true" 
+    Description="Set to true to enable this container in Traefik." 
+    Mask="false" 
+    Display="always-hide" 
+    Required="true">true</Config>
+  <Config 
+    Type="Label" 
+    Name="traefik.http.routers.traefik.rule" 
+    Target="traefik.http.routers.traefik.rule" 
+    Default="Host=(`traefik.domain.com`)" 
+    Description="Overrides the default frontend rule. Default: Host:{containerName}.{domain} if you are using docker-compose." 
+    Mask="false" 
+    Display="always-hide" 
+    Required="true">Host=(`traefik.domain.com`)</Config>
+  <Config 
+    Type="Label" 
+    Name="traefik.port" 
+    Target="traefik.port" 
+    Default="8080" 
+    Description="Registers this port. Useful when the container exposes multiples ports." 
+    Mask="false" 
+    Display="always-hide" 
+    Required="true">8080</Config>
+</Container>

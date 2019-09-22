@@ -13,7 +13,7 @@
    Please create your traefik.toml with your settings !
   </Overview>
   <Registry>https://hub.docker.com/_/traefik</Registry>
-  <Repository>traefik:latest</Repository>
+  <Repository>traefik:maroilles</Repository>
   <Privileged>false</Privileged>
   <Support>https://github.com/psdl/docker-templates/issues</Support>
   <Network>traefik_proxy</Network>

@@ -1,26 +1,34 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>traefik_v2</Name>
-  <Repository>https://hub.docker.com/_/traefik</Repository>
-  <Registry/>
+  <Name>traefikv2</Name>
+  <Repository>traefik:latest</Repository>
+  <Registry>https://hub.docker.com/_/traefik</Registry>
   <Network>traefik_proxy</Network>
   <MyIP/>
   <Shell>bash</Shell>
   <Privileged>false</Privileged>
-  <Support/>
-  <Project/>
-  <Overview/>
-  <Category>Network:Proxy Status:Stable</Category>
-  <WebUI>http://[IP]:[PORT:8080]</WebUI>
+  <Support>https://forums.docker.com/</Support>
+  <Project>https://traefik.io/</Project>
+  <Overview>Traefik is a modern HTTP reverse proxy and load balancer that makes deploying microservices easy.&#xD;
+&#xD;
+Traefik integrates with your existing infrastructure components (Docker, Swarm mode, Kubernetes, Marathon, Consul, Etcd, Rancher, Amazon ECS, ...) and configures itself automatically and dynamically.&#xD;
+&#xD;
+Pointing Traefik at your orchestrator should be the only configuration step you need.</Overview>
+  <Category/>
+  <WebUI>https://[IP]:[PORT:8080]</WebUI>
   <TemplateURL/>
-  <Icon>https://d1q6f0aelx0por.cloudfront.net/product-logos/fc7881bf-43a8-45dc-b3da-c4c4a8f29494-traefik.png</Icon>
+  <Icon>https://d1q6f0aelx0por.cloudfront.net/product-logos/fc7881bf-43a8-45dc-b3da-c4c4a8f29494-traefik.png?</Icon>
   <ExtraParams/>
   <PostArgs/>
-  <CPUset/>
-  <DateInstalled>1569275957</DateInstalled>
+  <CPUset>4,5,6,7,12,13,14,15</CPUset>
+  <DateInstalled>1569429500</DateInstalled>
   <DonateText/>
   <DonateLink/>
-  <Description/>
+  <Description>Traefik is a modern HTTP reverse proxy and load balancer that makes deploying microservices easy.&#xD;
+&#xD;
+Traefik integrates with your existing infrastructure components (Docker, Swarm mode, Kubernetes, Marathon, Consul, Etcd, Rancher, Amazon ECS, ...) and configures itself automatically and dynamically.&#xD;
+&#xD;
+Pointing Traefik at your orchestrator should be the only configuration step you need.</Description>
   <Networking>
     <Mode>traefik_proxy</Mode>
     <Publish>
@@ -43,14 +51,14 @@
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/appdata/traefikv2/traefik.tml</HostDir>
-      <ContainerDir>/etc/traefik/traefik.tml</ContainerDir>
+      <HostDir>/mnt/user/appdata/traefikv2/traefik.toml</HostDir>
+      <ContainerDir>/etc/traefik/traefik.toml</ContainerDir>
       <Mode>ro</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/appdata/traefikv2/acme.json</HostDir>
-      <ContainerDir>/etc/traefik/acme.json</ContainerDir>
-      <Mode>rw</Mode>
+      <HostDir>/mnt/user/appdata/traefikv2/dynamic-conf.toml</HostDir>
+      <ContainerDir>/etc/traefik/dynamic-conf.toml</ContainerDir>
+      <Mode>ro</Mode>
     </Volume>
     <Volume>
       <HostDir>/var/run/docker.sock</HostDir>
@@ -60,10 +68,10 @@
   </Data>
   <Environment/>
   <Labels/>
-  <Config Name="http" Target="" Default="80" Mode="tcp" Description="Container Port: " Type="Port" Display="always" Required="true" Mask="false">80</Config>
-  <Config Name="https" Target="" Default="443" Mode="tcp" Description="Container Port: " Type="Port" Display="always" Required="true" Mask="false">443</Config>
-  <Config Name="dashboard" Target="" Default="8080" Mode="tcp" Description="Container Port: " Type="Port" Display="always" Required="true" Mask="false">8080</Config>
-  <Config Name="config" Target="/etc/traefik/traefik.tml" Default="/mnt/user/appdata/traefikv2/traefik.tml" Mode="ro" Description="Container Path: /etc/traefik/traefik.tml" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/traefikv2/traefik.tml</Config>
-  <Config Name="certificate" Target="/etc/traefik/acme.json" Default="/mnt/user/appdata/traefikv2/acme.json" Mode="rw" Description="Container Path: /etc/traefik/acme.json" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/traefikv2/acme.json</Config>
-  <Config Name="docker.sock" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="Container Path: /var/run/docker.sock" Type="Path" Display="always" Required="true" Mask="false">/var/run/docker.sock</Config>
+  <Config Name="/etc/traefik/traefik.toml" Target="/etc/traefik/traefik.toml" Default="/mnt/user/appdata/traefikv2/traefik.toml" Mode="ro" Description="Static Configuration" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/traefikv2/traefik.toml</Config>
+  <Config Name="/etc/traefik/dynamic-conf.toml" Target="/etc/traefik/dynamic-conf.toml" Default="/mnt/user/appdata/traefikv2/dynamic-conf.toml" Mode="ro" Description="Dynamic configuration" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/traefikv2/dynamic-conf.toml</Config>
+  <Config Name="/var/run/docker.sock" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="Docker server endpoint" Type="Path" Display="always" Required="true" Mask="false">/var/run/docker.sock</Config>
+  <Config Name="http" Target="" Default="80" Mode="tcp" Description="HTTP port" Type="Port" Display="always" Required="true" Mask="false">80</Config>
+  <Config Name="https" Target="" Default="443" Mode="tcp" Description="HTTPS port" Type="Port" Display="always" Required="true" Mask="false">443</Config>
+  <Config Name="dashboard" Target="" Default="8080" Mode="tcp" Description="Dashboard port" Type="Port" Display="always" Required="true" Mask="false">8080</Config>
 </Container>

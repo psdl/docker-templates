@@ -61,6 +61,11 @@ Pointing Traefik at your orchestrator should be the only configuration step you 
       <Mode>ro</Mode>
     </Volume>
     <Volume>
+      <HostDir>/mnt/user/appdata/traefikv2/dynamic-conf.toml</HostDir>
+      <ContainerDir>/etc/traefik/dynamic-conf.toml</ContainerDir>
+      <Mode>ro</Mode>
+    </Volume>
+    <Volume>
       <HostDir>/var/run/docker.sock</HostDir>
       <ContainerDir>/var/run/docker.sock</ContainerDir>
       <Mode>ro</Mode>
@@ -70,6 +75,7 @@ Pointing Traefik at your orchestrator should be the only configuration step you 
   <Labels/>
   <Config Name="/etc/traefik/traefik.toml" Target="/etc/traefik/traefik.toml" Default="/mnt/user/appdata/traefikv2/traefik.toml" Mode="ro" Description="Static Configuration" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/traefikv2/traefik.toml</Config>
   <Config Name="/etc/traefik/dynamic-conf.toml" Target="/etc/traefik/dynamic-conf.toml" Default="/mnt/user/appdata/traefikv2/dynamic-conf.toml" Mode="ro" Description="Dynamic configuration" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/traefikv2/dynamic-conf.toml</Config>
+  <Config Name="/etc/traefik/acme.json" Target="/etc/traefik/acme.json" Default="/mnt/user/appdata/traefikv2/acme.json" Mode="ro" Description="LetsEncrypt certificate storage file" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/traefikv2/acme.json</Config>
   <Config Name="/var/run/docker.sock" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="Docker server endpoint" Type="Path" Display="always" Required="true" Mask="false">/var/run/docker.sock</Config>
   <Config Name="http" Target="" Default="80" Mode="tcp" Description="HTTP port" Type="Port" Display="always" Required="true" Mask="false">80</Config>
   <Config Name="https" Target="" Default="443" Mode="tcp" Description="HTTPS port" Type="Port" Display="always" Required="true" Mask="false">443</Config>

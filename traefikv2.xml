@@ -34,17 +34,17 @@ Pointing Traefik at your orchestrator should be the only configuration step you 
     <Publish>
       <Port>
         <HostPort>80</HostPort>
-        <ContainerPort/>
+        <ContainerPort>80<ContainerPort/>
         <Protocol>tcp</Protocol>
       </Port>
       <Port>
         <HostPort>443</HostPort>
-        <ContainerPort/>
+        <ContainerPort>443<ContainerPort/>
         <Protocol>tcp</Protocol>
       </Port>
       <Port>
         <HostPort>8080</HostPort>
-        <ContainerPort/>
+        <ContainerPort>8080<ContainerPort/>
         <Protocol>tcp</Protocol>
       </Port>
     </Publish>

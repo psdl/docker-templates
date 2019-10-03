@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>redis</Name>
+  <Repository>redis:latest</Repository>
+  <Registry>https://hub.docker.com/_/redis</Registry>
+  <Network>traefik_proxy</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/docker-library/redis/issues</Support>
+  <Project>https://github.com/docker-library/redis</Project>
+  <Overview>&#xD;
+Redis[br]&#xD;
+Redis is an open-source, networked, in-memory, key-value data store with optional durability.[br][br]&#xD;
+  &#xD;
+If you plan to use Redis just as a cache where every key will have an expire set, you may consider using the following configuration instead:[br][br]&#xD;
+&#xD;
+&amp;gt; redis-cli &amp;gt; maxmemory 2mb[br]&#xD;
+&amp;gt; redis-cli &amp;gt; maxmemory-policy allkeys-lru&#xD;
+  </Overview>
+  <Category>Network:Other Other: Tools:</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://d1q6f0aelx0por.cloudfront.net/product-logos/89e5782a-76ea-4b94-a561-39e331c281a5-redis.png?</Icon>
+  <ExtraParams>--sysctl net.core.somaxconn=511</ExtraParams>
+  <PostArgs/>
+  <CPUset>4,5,6,7,12,13,14,15</CPUset>
+  <DateInstalled>1570108612</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>&#xD;
+Redis[br]&#xD;
+Redis is an open-source, networked, in-memory, key-value data store with optional durability.[br][br]&#xD;
+  &#xD;
+If you plan to use Redis just as a cache where every key will have an expire set, you may consider using the following configuration instead:[br][br]&#xD;
+&#xD;
+&amp;gt; redis-cli &amp;gt; maxmemory 2mb[br]&#xD;
+&amp;gt; redis-cli &amp;gt; maxmemory-policy allkeys-lru&#xD;
+  </Description>
+  <Networking>
+    <Mode>traefik_proxy</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/redis</HostDir>
+      <ContainerDir>/usr/local/etc/redis</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Labels>
+    <Label>
+      <Value>false</Value>
+      <Name>traefik.enable</Name>
+      <Mode>{3}</Mode>
+    </Label>
+  </Labels>
+  <Config Name="/usr/local/etc/redis" Target="/usr/local/etc/redis" Default="/mnt/user/appdata/redis" Mode="rw" Description="redis config directory." Type="Path" Display="{6}" Required="true" Mask="{8}">/mnt/user/appdata/redis</Config>
+  <Config Name="traefik.enable" Target="traefik.enable" Default="false" Mode="{3}" Description="Set to true to enable this container in Traefik." Type="Label" Display="always-hide" Required="true" Mask="false">false</Config>
+</Container>

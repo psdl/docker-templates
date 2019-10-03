@@ -14,7 +14,7 @@
 A safe home for all your data. Access &amp;amp; share your files, calendars, contacts, mail &amp;amp; more from any device, on your terms.&#xD;
   </Overview>
   <Category>Cloud: Productivity: Tools: Network:Web</Category>
-  <WebUI>https://nextcloud.domain.com</WebUI>
+  <WebUI>http://[IP]:[PORT:80]</WebUI>
   <TemplateURL/>
   <Icon>https://d1q6f0aelx0por.cloudfront.net/product-logos/nextcloud.png?</Icon>
   <ExtraParams/>

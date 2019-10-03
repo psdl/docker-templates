@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>nextcloud</Name>
+  <Repository>nextcloud:latest</Repository>
+  <Registry>https://hub.docker.com/_/nextcloud</Registry>
+  <Network>traefik_proxy</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/nextcloud/docker/issues</Support>
+  <Project>https://github.com/nextcloud/docker</Project>
+  <Overview>Nextcloud&#xD;
+&#xD;
+A safe home for all your data. Access &amp;amp; share your files, calendars, contacts, mail &amp;amp; more from any device, on your terms.&#xD;
+  </Overview>
+  <Category>Cloud: Productivity: Tools: Network:Web</Category>
+  <WebUI>https://nextcloud.domain.com</WebUI>
+  <TemplateURL/>
+  <Icon>https://d1q6f0aelx0por.cloudfront.net/product-logos/nextcloud.png?</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset>4,5,6,7,12,13,14,15</CPUset>
+  <DateInstalled>1570108039</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Nextcloud&#xD;
+&#xD;
+A safe home for all your data. Access &amp;amp; share your files, calendars, contacts, mail &amp;amp; more from any device, on your terms.&#xD;
+  </Description>
+  <Networking>
+    <Mode>traefik_proxy</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/nextcloud/config</HostDir>
+      <ContainerDir>/var/www/html/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/nextcloud/data</HostDir>
+      <ContainerDir>/var/www/html/data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/nextcloud/apps</HostDir>
+      <ContainerDir>/var/www/html/apps</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>99</Value>
+      <Name>PUID</Name>
+      <Mode>{3}</Mode>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>GUID</Name>
+      <Mode>{3}</Mode>
+    </Variable>
+  </Environment>
+  <Labels>
+    <Label>
+      <Value>true</Value>
+      <Name>traefik.enable</Name>
+      <Mode/>
+    </Label>
+    <Label>
+      <Value>Host(`nextcloud.domain.com`)</Value>
+      <Name>traefik.http.routers.nextcloud0.rule</Name>
+      <Mode/>
+    </Label>
+    <Label>
+      <Value>web</Value>
+      <Name>traefik.http.routers.nextcloud0.entrypoints</Name>
+      <Mode/>
+    </Label>
+    <Label>
+      <Value>redirect-to-https@file</Value>
+      <Name>traefik.http.routers.nextcloud0.middlewares</Name>
+      <Mode/>
+    </Label>
+    <Label>
+      <Value>Host(`nextcloud.domain.com`)</Value>
+      <Name>traefik.http.routers.nextcloud1.rule</Name>
+      <Mode/>
+    </Label>
+    <Label>
+      <Value>web-secure</Value>
+      <Name>traefik.http.routers.nextcloud1.entrypoints</Name>
+      <Mode/>
+    </Label>
+    <Label>
+      <Value>true</Value>
+      <Name>traefik.http.routers.nextcloud1.tls</Name>
+      <Mode/>
+    </Label>
+    <Label>
+      <Value>hsts@file</Value>
+      <Name>traefik.http.routers.nextcloud1.middlewares</Name>
+      <Mode/>
+    </Label>
+    <Label>
+      <Value>redirect-well-known</Value>
+      <Name>traefik.http.routers.nextcloud1.middlewares</Name>
+      <Mode/>
+    </Label>
+    <Label>
+      <Value>https://nextcloud.domain.com/.well-known\/(card|cal)dav</Value>
+      <Name>traefik.http.middlewares.redirect-well-known.redirectregex.regex</Name>
+      <Mode/>
+    </Label>
+    <Label>
+      <Value>https://nextcloud.domain.com/remote.php/dav</Value>
+      <Name>traefik.http.middlewares.redirect-well-known.redirectregex.replacement</Name>
+      <Mode/>
+    </Label>
+  </Labels>
+  <Config Name="local configuration" Target="/var/www/html/config" Default="/mnt/user/appdata/nextcloud/config" Mode="rw" Description="Container Path: /var/www/html/config" Type="Path" Display="always" Required="true" Mask="null">/mnt/user/appdata/nextcloud/config</Config>
+  <Config Name="data directory" Target="/var/www/html/data" Default="/mnt/user/appdata/nextcloud/data" Mode="rw" Description="Container Path: /var/www/html/data" Type="Path" Display="always" Required="true" Mask="null">/mnt/user/appdata/nextcloud/data</Config>
+  <Config Name="application directory" Target="/var/www/html/apps" Default="/mnt/user/appdata/nextcloud/apps" Mode="rw" Description="Container Path: /var/www/html/apps" Type="Path" Display="always" Required="true" Mask="null">/mnt/user/appdata/nextcloud/apps</Config>
+  <Config Name="traefik.enable" Target="traefik.enable" Default="" Mode="" Description="Container Label: traefik.enable" Type="Label" Display="always" Required="true" Mask="false">true</Config>
+  <Config Name="traefik.http.routers.nextcloud0.rule" Target="traefik.http.routers.nextcloud0.rule" Default="" Mode="" Description="Container Label: traefik.http.routers.nextcloud0.rule" Type="Label" Display="always" Required="true" Mask="false">Host(`nextcloud.domain.com`)</Config>
+  <Config Name="traefik.http.routers.nextcloud0.entrypoints" Target="traefik.http.routers.nextcloud0.entrypoints" Default="" Mode="" Description="Container Label: traefik.http.routers.nextcloud0.entrypoints" Type="Label" Display="always" Required="true" Mask="false">web</Config>
+  <Config Name="traefik.http.routers.nextcloud0.middlewares" Target="traefik.http.routers.nextcloud0.middlewares" Default="" Mode="" Description="Container Label: traefik.http.routers.nextcloud0.middlewares" Type="Label" Display="always" Required="true" Mask="false">redirect-to-https@file</Config>
+  <Config Name="traefik.http.routers.nextcloud1.rule" Target="traefik.http.routers.nextcloud1.rule" Default="" Mode="" Description="Container Label: traefik.http.routers.nextcloud1.rule" Type="Label" Display="always" Required="true" Mask="false">Host(`nextcloud.domain.com`)</Config>
+  <Config Name="traefik.http.routers.nextcloud1.entrypoints" Target="traefik.http.routers.nextcloud1.entrypoints" Default="" Mode="" Description="Container Label: traefik.http.routers.nextcloud1.entrypoints" Type="Label" Display="always" Required="true" Mask="false">web-secure</Config>
+  <Config Name="traefik.http.routers.nextcloud1.tls" Target="traefik.http.routers.nextcloud1.tls" Default="" Mode="" Description="Container Label: traefik.http.routers.nextcloud1.tls" Type="Label" Display="always" Required="true" Mask="false">true</Config>
+  <Config Name="traefik.http.routers.nextcloud1.middlewares" Target="traefik.http.routers.nextcloud1.middlewares" Default="" Mode="" Description="Container Label: traefik.http.routers.nextcloud1.middlewares" Type="Label" Display="always" Required="true" Mask="false">hsts@file</Config>
+  <Config Name="traefik.http.routers.nextcloud1.middlewares" Target="traefik.http.routers.nextcloud1.middlewares" Default="" Mode="" Description="Container Label: traefik.http.routers.nextcloud1.middlewares" Type="Label" Display="always" Required="true" Mask="false">redirect-well-known</Config>
+  <Config Name="traefik.http.middlewares.redirect-well-known.redirectregex.regex" Target="traefik.http.middlewares.redirect-well-known.redirectregex.regex" Default="" Mode="" Description="Container Label: traefik.http.middlewares.redirect-well-known.redirectregex.regex" Type="Label" Display="always" Required="true" Mask="false">https://nextcloud.domain.com/.well-known\/(card|cal)dav</Config>
+  <Config Name="traefik.http.middlewares.redirect-well-known.redirectregex.replacement" Target="traefik.http.middlewares.redirect-well-known.redirectregex.replacement" Default="" Mode="" Description="Container Label: traefik.http.middlewares.redirect-well-known.redirectregex.replacement" Type="Label" Display="always" Required="true" Mask="false">https://nextcloud.domain.com/remote.php/dav</Config>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="{3}" Description="User ID." Type="Variable" Display="advanced" Required="true" Mask="false">99</Config>
+  <Config Name="GUID" Target="GUID" Default="100" Mode="{3}" Description="Group ID." Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
+</Container>

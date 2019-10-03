@@ -15,7 +15,7 @@ Traefik integrates with your existing infrastructure components (Docker, Swarm m
 &#xD;
 Pointing Traefik at your orchestrator should be the only configuration step you need.</Overview>
   <Category>Network:Web Network:Proxy</Category>
-  <WebUI>https://[IP]:[PORT:8080]</WebUI>
+  <WebUI>http://[IP]:[PORT:8080]</WebUI>
   <TemplateURL/>
   <Icon>https://d1q6f0aelx0por.cloudfront.net/product-logos/fc7881bf-43a8-45dc-b3da-c4c4a8f29494-traefik.png?</Icon>
   <ExtraParams/>

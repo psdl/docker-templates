@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>homebridge</Name>
+  <Repository>oznu/homebridge:latest</Repository>
+  <Registry>https://hub.docker.com/r/oznu/homebridge</Registry>
+  <Network>host</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview>Homebridge is a lightweight NodeJS server you can run on your home network that emulates the iOS HomeKit API. It supports Plugins, which are community-contributed modules that provide a basic bridge from HomeKit to various 3rd-party APIs provided by manufacturers of "smart home" devices.</Overview>
+  <Category>HomeAutomation:</Category>
+  <WebUI>http://[IP]:[PORT:8053]</WebUI>
+  <TemplateURL/>
+  <Icon>https://github.com/psdl/docker-templates/raw/images/Homebridge.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset>4,5,6,7,12,13,14,15</CPUset>
+  <DateInstalled>1570108879</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Homebridge is a lightweight NodeJS server you can run on your home network that emulates the iOS HomeKit API. It supports Plugins, which are community-contributed modules that provide a basic bridge from HomeKit to various 3rd-party APIs provided by manufacturers of "smart home" devices.</Description>
+  <Networking>
+    <Mode>host</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/homebridge/</HostDir>
+      <ContainerDir>/homebridge</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>1</Value>
+      <Name>HOMEBRIDGE_CONFIG_UI</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>8053</Value>
+      <Name>HOMEBRIDGE_CONFIG_UI_PORT</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>Europe/Berlin</Value>
+      <Name>TZ</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="HOMEBRIDGE_CONFIG_UI" Target="HOMEBRIDGE_CONFIG_UI" Default="" Mode="" Description="Container Variable: HOMEBRIDGE_CONFIG_UI" Type="Variable" Display="always" Required="false" Mask="false">1</Config>
+  <Config Name="HOMEBRIDGE_CONFIG_UI_PORT" Target="HOMEBRIDGE_CONFIG_UI_PORT" Default="" Mode="" Description="Container Variable: HOMEBRIDGE_CONFIG_UI_PORT" Type="Variable" Display="always" Required="false" Mask="false">8053</Config>
+  <Config Name="Timezone" Target="TZ" Default="" Mode="" Description="Container Variable: TZ" Type="Variable" Display="always" Required="false" Mask="false">Europe/Berlin</Config>
+  <Config Name="config" Target="/homebridge" Default="" Mode="rw" Description="Container Path: /homebridge" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/homebridge/</Config>
+</Container>

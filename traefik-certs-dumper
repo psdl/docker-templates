@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>traefik-certs-dumper</Name>
+  <Repository>ldez/traefik-certs-dumper:latest</Repository>
+  <Registry>https://hub.docker.com/r/ldez/traefik-certs-dumper</Registry>
+  <Network>traefik_proxy</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview/>
+  <Category>Tools:</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://www.pinclipart.com/picdir/big/206-2066625_certification-certificate-png-icon-clipart.png</Icon>
+  <ExtraParams/>
+  <PostArgs>file --source /traefik/acme.json --dest /traefik/ssl  --version v2 --watch</PostArgs>
+  <CPUset>4,5,6,7,12,13,14,15</CPUset>
+  <DateInstalled>1570109067</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description/>
+  <Networking>
+    <Mode>traefik_proxy</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/traefik/acme.json</HostDir>
+      <ContainerDir>/traefik/acme.json</ContainerDir>
+      <Mode>ro</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/traefik/ssl</HostDir>
+      <ContainerDir>/traefik/ssl</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Labels/>
+  <Config Name="acme.json" Target="/traefik/acme.json" Default="" Mode="ro" Description="Container Path: /traefik/acme.json" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/traefik/acme.json</Config>
+  <Config Name="dump path" Target="/traefik/ssl" Default="" Mode="rw" Description="Container Path: /traefik/ssl" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/traefik/ssl</Config>
+</Container>
